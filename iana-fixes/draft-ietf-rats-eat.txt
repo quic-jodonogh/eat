@@ -2825,7 +2825,7 @@ Table of Contents
    *  Specification Document(s): *this document*
 
 
-   *  Claim Name: OEM Authortised Boot
+   *  Claim Name: OEM Authorised Boot
 
    *  Claim Description: Indicates whether the software booted was OEM
       authorized
