@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-08-10T04:27:57.860299+00:00",
+  "timestamp": "2023-08-10T18:26:14.544088+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -21375,18 +21375,26 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-08-10T04:27:30Z",
-      "updatedAt": "2023-08-10T04:27:30Z",
+      "updatedAt": "2023-08-10T18:15:18Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "fba63153ed34b4b50d49034fc6bb5f40015e6f41",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "iana-fixes",
-      "headRefOid": "5b837e8ef30e14ca00b1bcc2309833d25a3df0ba",
+      "headRefOid": "b63a53d54d72dc7cc8213e7201585396f5239e82",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This looks fine but you missed one item from the review (i.e., Authortised). \r\n\r\n```\r\nIANA QUESTION -> Should the Claim Name be changed to \"OEM Authorized Boot\" instead, or is \"OEM Authortised Boot\" correct? Also, should the description be changed to \"Indicates whether the software booted was OEM authorized\"?\r\n```",
+          "createdAt": "2023-08-10T11:20:58Z",
+          "updatedAt": "2023-08-10T11:53:35Z"
+        }
+      ],
       "reviews": []
     }
   ]
