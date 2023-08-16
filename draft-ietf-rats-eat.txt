@@ -20,8 +20,8 @@ Abstract
    An Entity Attestation Token (EAT) provides an attested claims set
    that describes state and characteristics of an entity, a device like
    a smartphone, IoT device, network equipment or such.  This claims set
-   is used by a relying party, server or service to determine how much
-   it wishes to trust the entity.
+   is used by a relying party, server or service to determine the type
+   and degree of trust placed in the entity.
 
    An EAT is either a CBOR Web Token (CWT) or JSON Web Token (JWT) with
    attestation-oriented claims.
@@ -1156,7 +1156,7 @@ Table of Contents
 4.2.14.  dloas (Digital Letters of Approval) Claim
 
    The "dloas" claim conveys one or more Digital Letters of Approval
-   (DLOAs)).  A DLOA [DLOA] is a document that describes a certification
+   (DLOAs).  A DLOA [DLOA] is a document that describes a certification
    that an entity has received.  Examples of certifications represented
    by a DLOA include those issued by Global Platform and those based on
    Common Criteria.  The DLOA is unspecific to any particular
@@ -1307,7 +1307,7 @@ Table of Contents
    The "measres" claim is a general-purpose structure for reporting
    comparison of measurements to expected reference values.  This claim
    provides a simple standard way to report the result of a comparison
-   as success, failure, fail to run, ...
+   as success, failure, fail to run, and absence.
 
    It is the nature of measurement systems that they are specific to the
    operating system, software and hardware of the entity that is being
@@ -1748,7 +1748,7 @@ Table of Contents
 
    BUNDLE-Messages = BUNDLE-Tagged-Message / BUNDLE-Untagged-Message
 
-   BUNDLE-Tagged-Message   = #6.TBD(BUNDLE-Untagged-Message)
+   BUNDLE-Tagged-Message   = #6.TBD602(BUNDLE-Untagged-Message)
    BUNDLE-Untagged-Message = Detached-EAT-Bundle
 
    Detached-EAT-Bundle = [
@@ -1963,11 +1963,11 @@ Table of Contents
    A profile may define new claims that are not defined in this
    document.
 
-   This document requires an EAT receiver must accept all claims it does
-   not understand.  A profile for a specific use case may reverse this
-   and allow a receiver to reject tokens with claims it does not
-   understand.  A profile for a specific use case may specify that
-   specific claims are prohibited.
+   This document requires an EAT receiver must accept tokens with claims
+   it does not understand.  A profile for a specific use case may
+   reverse this and allow a receiver to reject tokens with claims it
+   does not understand.  A profile for a specific use case may specify
+   that specific claims are prohibited.
 
    A profile for a specific use case may modify this and specify that
    some claims are required.
@@ -1979,7 +1979,7 @@ Table of Contents
 
    Some claims are "pluggable" in that they allow different formats for
    their content.  The "manifests" claim (Section 4.2.15) along with the
-   measurement and "measurements" (Section 4.2.16)) claims are examples
+   measurement and "measurements" (Section 4.2.16) claims are examples
    of this, allowing the use of CoSWID, TEEP Manifests and other
    formats.  A profile should specify which formats are allowed to be
    sent, with the assumption that the corresponding COAP content types
@@ -2046,7 +2046,7 @@ Table of Contents
        |                | out on claims it doesn't understand.    |
        +----------------+-----------------------------------------+
 
-                                 Table 2
+              Table 2: Constrained Device Profile Definition
 
    Any profile with different requirements than those above MUST have a
    different profile identifier.
@@ -2174,8 +2174,8 @@ Table of Contents
    This CDDL uses, but doesn't define Submodule or nested tokens because
    the definition for these types varies between CBOR and JSON and the
    JC<> generic can't be used to define it.  The submodule claim is the
-   one place that that a CBOR token can be nested inside a JSON token
-   and vice versa.  Encoding-specific definitions are provided in the
+   one place where a CBOR token can be nested inside a JSON token and
+   vice versa.  Encoding-specific definitions are provided in the
    following sections.
 
    time-int = #6.1(int)
@@ -2391,7 +2391,7 @@ Table of Contents
 
    BUNDLE-Messages = BUNDLE-Tagged-Message / BUNDLE-Untagged-Message
 
-   BUNDLE-Tagged-Message   = #6.TBD(BUNDLE-Untagged-Message)
+   BUNDLE-Tagged-Message   = #6.TBD602(BUNDLE-Untagged-Message)
    BUNDLE-Untagged-Message = Detached-EAT-Bundle
 
    Detached-EAT-Bundle = [
@@ -3069,7 +3069,7 @@ Table of Contents
          |         | Entity Identifier           |               |
          +---------+-----------------------------+---------------+
 
-                                  Table 3
+                       Table 3: UEID URN Registration
 
 10.4.  CBOR Tag for Detached EAT Bundle Registered by this Document
 
@@ -3083,7 +3083,7 @@ Table of Contents
           | TBD602 | array      | Detached EAT Bundle Section 5 |
           +--------+------------+-------------------------------+
 
-                                  Table 4
+               Table 4: Detached EAT Bundle Tag Registration
 
 11.  References
 
@@ -3895,7 +3895,7 @@ B.1.  Collision Probability
      | billion |           |            |          | (10^17)         |
      +---------+-----------+------------+----------+-----------------+
 
-                                  Table 5
+                   Table 5: Entity Database Size Examples
 
    This is conceptually similar to the Birthday Problem where m is the
    number of possible birthdays, always 365, and k is the number of
@@ -3934,7 +3934,7 @@ B.1.  Collision Probability
    | (10^17)             |              |              |              |
    +---------------------+--------------+--------------+--------------+
 
-                                 Table 6
+                        Table 6: UEID Size Options
 
    Next, to calculate the probability of a collision occurring in one
    year's operation of a database, it is assumed that the database size
@@ -3969,7 +3969,7 @@ B.1.  Collision Probability
    | (10^17)             | microseconds |              |              |
    +---------------------+--------------+--------------+--------------+
 
-                                 Table 7
+                   Table 7: UEID Collision Probability
 
    Clearly, 128 bits is enough for the near future thus the requirement
    that UEIDs be a minimum of 128 bits.
@@ -4042,7 +4042,7 @@ C.1.  DevID Used With EAT
 
    As just described, EAT standardizes a message format and
    [IEEE.802.1AR] doesn't.  Vice versa, EAT doesn't define a an device
-   implementation and DevID does.
+   implementation, but DevID does.
 
    Hence, EAT can be the message format that a DevID is used with.  The
    DevID secret becomes the attestation key used to sign EATs.  The
@@ -4392,6 +4392,15 @@ Appendix G.  Changes from Previous Drafts
    document.
 
 G.1.  From draft-ietf-rats-eat-21
+
+   *  Add titles to tables
+
+   *  Fix some nits
+
+   *  Clarification in 6.1.12 that "receiver accepts token with claims
+      it does not understand"
+
+   *  Abstract wording improvement
 
    *  IETF is change controller rather than IESG for IANA registrations
 
