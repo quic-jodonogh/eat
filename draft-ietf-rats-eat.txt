@@ -5,11 +5,11 @@
 RATS                                                        L. Lundblade
 Internet-Draft                                       Security Theory LLC
 Intended status: Standards Track                              G. Mandyam
-Expires: 15 December 2023                                  J. O'Donoghue
+Expires: 17 February 2024                                  J. O'Donoghue
                                               Qualcomm Technologies Inc.
                                                               C. Wallace
                                                 Red Hound Software, Inc.
-                                                            13 June 2023
+                                                          16 August 2023
 
 
                    The Entity Attestation Token (EAT)
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 December 2023.
+   This Internet-Draft will expire on 17 February 2024.
 
 Copyright Notice
 
@@ -191,7 +191,7 @@ Table of Contents
        F.1.3.  CBOR Certificate COSE Header Parameters
        F.1.4.  Claim-Based Key Identification
    Appendix G.  Changes from Previous Drafts
-     G.1.  From draft-ietf-rats-eat-19
+     G.1.  From draft-ietf-rats-eat-21
    Contributors
    Authors' Addresses
 
@@ -433,7 +433,7 @@ Table of Contents
    This document reuses terminology from JWT [RFC7519] and CWT
    [RFC8392]:
 
-   Base64url Encoding:  Base64url encoding is as described in [RFC7515],
+   base64url-encoded:  base64url-encoded is as described in [RFC7515],
       i.e., using URL- and filename-safe character set [RFC4648] with
       all trailing '=' characters omitted and without the inclusion of
       any line breaks, whitespace, or other additional characters.
@@ -825,7 +825,7 @@ Table of Contents
    identifies the OEM on a statistical basis and is large enough should
    there be ten billion companies.
 
-   In JSON-encoded tokens this MUST be base64url encoded [RFC4648].
+   In JSON-encoded tokens this MUST be base64url-encoded.
 
 4.2.3.2.  IEEE Based OEMID
 
@@ -853,7 +853,7 @@ Table of Contents
 
    This format is always 3 bytes in size in CBOR.
 
-   In JSON-encoded tokens, this MUST be base64url encoded and always 4
+   In JSON-encoded tokens, this MUST be base64url-encoded and always 4
    bytes.
 
 4.2.3.3.  IANA Private Enterprise Number Based OEMID
@@ -1182,10 +1182,10 @@ Table of Contents
    constructing the registrar URI, platform label and possibly
    application label is specified in [DLOA].
 
-   The retriever of a DLOA SHOULD follow the recommendation in [DLOA]
-   and use TLS to be sure the DLOA registrar they are accessing is
-   authentic.  The platform and application labels in the claim indicate
-   the correct DLOA for the entity.
+   The retriever of a DLOA MUST follow the recommendation in [DLOA] and
+   use TLS or some other means to be sure the DLOA registrar they are
+   accessing is authentic.  The platform and application labels in the
+   claim indicate the correct DLOA for the entity.
 
    $$Claims-Set-Claims //= (
        dloas-label => [ + dloa-type ]
@@ -1733,7 +1733,7 @@ Table of Contents
    *  MUST use the same encoding as the bundle
 
    *  MUST be wrapped in a byte string when the encoding is CBOR and be
-      base64url encoded when the encoding is JSON
+      base64url-encoded when the encoding is JSON
 
    For CBOR-encoded detached EAT bundles, tag TBD602 can be used to
    identify it.  The standard rules apply for use or non-use of a tag.
@@ -2132,7 +2132,7 @@ Table of Contents
    JSON should be encoded per [RFC8610], Appendix E.  In addition, the
    following CDDL types are encoded in JSON as follows:
 
-   *  bstr -- MUST be base64url encoded
+   *  bstr -- MUST be base64url-encoded
 
    *  time -- MUST be encoded as NumericDate as described in Section 2
       of [RFC7519].
@@ -2627,7 +2627,7 @@ Table of Contents
 
 9.3.  Freshness
 
-   All EAT use must provide a freshness mechanism to prevent replay and
+   All EAT use MUST provide a freshness mechanism to prevent replay and
    related attacks.  The extensive discussions on freshness in
    [RATS.Architecture] including security considerations apply here.
    The EAT nonce claim, in Section 4.1, is one option to provide
@@ -2649,8 +2649,8 @@ Table of Contents
    then pass specific subsets of claims to other consumers for
    evaluation ("downstream consumers").  Since any COSE encryption will
    be removed by the receiving consumer, the communication of claim
-   subsets to any downstream consumer should leverage a communication
-   security protocol (e.g.  Transport Layer Security).
+   subsets to any downstream consumer MUST leverage an equivalent
+   communication security protocol (e.g.  Transport Layer Security).
 
    However, assume the EAT of the previous example is hierarchical and
    each claim subset for a downstream consumer is created in the form of
@@ -2745,7 +2745,7 @@ Table of Contents
 
    *  Claim Value Type(s): byte string
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2760,7 +2760,7 @@ Table of Contents
 
    *  Claim Value Type(s): byte string
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2775,7 +2775,7 @@ Table of Contents
 
    *  Claim Value Type(s): map
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2790,7 +2790,7 @@ Table of Contents
 
    *  Claim Value Type(s): byte string or integer
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2805,7 +2805,7 @@ Table of Contents
 
    *  Claim Value Type(s): byte string
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2820,14 +2820,14 @@ Table of Contents
 
    *  Claim Value Type(s): array
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
 
-   *  Claim Name: OEM Authortised Boot
+   *  Claim Name: OEM Authorised Boot
 
-   *  Claim Description: Indicate whether the software booted was OEM
+   *  Claim Description: Indicates whether the software booted was OEM
       authorized
 
    *  JWT Claim Name: "oemboot"
@@ -2836,14 +2836,14 @@ Table of Contents
 
    *  Claim Value Type(s): Boolean
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
 
    *  Claim Name: Debug Status
 
-   *  Claim Description: Indicate status of debug facilities
+   *  Claim Description: Indicates status of debug facilities
 
    *  JWT Claim Name: "dbgstat"
 
@@ -2851,7 +2851,7 @@ Table of Contents
 
    *  Claim Value Type(s): integer or string
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2866,7 +2866,7 @@ Table of Contents
 
    *  Claim Value Type(s): map
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2881,7 +2881,7 @@ Table of Contents
 
    *  Claim Value Type(s): URI or OID
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2896,7 +2896,7 @@ Table of Contents
 
    *  Claim Value Type(s): map
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2911,7 +2911,7 @@ Table of Contents
 
    *  Claim Value Type(s): unsigned integer
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2927,7 +2927,7 @@ Table of Contents
 
    *  Claim Value Type(s): uint
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2942,7 +2942,7 @@ Table of Contents
 
    *  Claim Value Type(s): bytes
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2958,7 +2958,7 @@ Table of Contents
 
    *  Claim Value Type(s): array
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2973,7 +2973,7 @@ Table of Contents
 
    *  Claim Value Type(s): map
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2988,7 +2988,7 @@ Table of Contents
 
    *  Claim Value Type(s): map
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -3004,7 +3004,7 @@ Table of Contents
 
    *  Claim Value Type(s): array
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -3020,7 +3020,7 @@ Table of Contents
 
    *  Claim Value Type(s): array
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -3036,7 +3036,7 @@ Table of Contents
 
    *  Claim Value Type(s): array
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -3051,7 +3051,7 @@ Table of Contents
 
    *  Claim Value Type(s): integer or string
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -3222,23 +3222,43 @@ Table of Contents
               <https://en.wikipedia.org/wiki/Birthday_attack.>.
 
    [CBOR.Cert.Draft]
-              "*** BROKEN REFERENCE ***".
+              Mattsson, J. P., Selander, G., Raza, S., Höglund, J., and
+              M. Furuhed, "CBOR Encoded X.509 Certificates (C509
+              Certificates)", Work in Progress, Internet-Draft, draft-
+              ietf-cose-cbor-encoded-cert-06, 7 July 2023,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-cose-
+              cbor-encoded-cert-06>.
 
    [COSE.X509.Draft]
-              "*** BROKEN REFERENCE ***".
+              Schaad, J., "CBOR Object Signing and Encryption (COSE):
+              Header Parameters for Carrying and Referencing X.509
+              Certificates", Work in Progress, Internet-Draft, draft-
+              ietf-cose-x509-09, 13 October 2022,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-cose-
+              x509-09>.
 
    [EAT.media-types]
-              "*** BROKEN REFERENCE ***".
+              Lundblade, L., Birkholz, H., and T. Fossati, "EAT Media
+              Types", Work in Progress, Internet-Draft, draft-ietf-rats-
+              eat-media-type-04, 23 July 2023,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-rats-
+              eat-media-type-04>.
 
    [IEEE-RA]  "IEEE Registration Authority",
               <https://standards.ieee.org/products-services/regauth/
               index.html>.
 
    [IEEE.802-2001]
-              "*** BROKEN REFERENCE ***".
+              IEEE, "IEEE Standard for Local and Metropolitan Area
+              Networks: Overview and Architecture",
+              DOI 10.1109/ieeestd.2014.6847097, 2 July 2014,
+              <https://doi.org/10.1109/ieeestd.2014.6847097>.
 
    [IEEE.802.1AR]
-              "*** BROKEN REFERENCE ***".
+              IEEE, "IEEE Standard for Local and Metropolitan Area
+              Networks - Secure Device Identity",
+              DOI 10.1109/ieeestd.2018.8423794, 31 July 2018,
+              <https://doi.org/10.1109/ieeestd.2018.8423794>.
 
    [JTAG]     "IEEE Standard for Reduced-Pin and Enhanced-Functionality
               Test Access Port and Boundary-Scan Architecture", February
@@ -3282,10 +3302,17 @@ Table of Contents
               DOI 10.17487/RFC9039, June 2021,
               <https://www.rfc-editor.org/rfc/rfc9039>.
 
-   [UCCS]     "*** BROKEN REFERENCE ***".
+   [UCCS]     Birkholz, H., O'Donoghue, J., Cam-Winget, N., and C.
+              Bormann, "A CBOR Tag for Unprotected CWT Claims Sets",
+              Work in Progress, Internet-Draft, draft-ietf-rats-uccs-06,
+              2 August 2023, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-rats-uccs-06>.
 
    [W3C.GeoLoc]
-              "*** BROKEN REFERENCE ***".
+              Popescu, A., Ed., "Geolocation API Specification", W3C
+              REC REC-geolocation-API-20131024, W3C REC-geolocation-API-
+              20131024, 24 October 2013, <https://www.w3.org/TR/2013/
+              REC-geolocation-API-20131024/>.
 
 Appendix A.  Examples
 
@@ -3307,7 +3334,7 @@ A.1.1.  Simple TEE Attestation
    / This is an EAT payload that describes a simple TEE. /
 
    {
-       / eat_nonce /       10: h'948f8860d13a463e',
+       / eat_nonce /       10: h'48df7b172d70b5a18935d0460a73dd71',
        / oemboot /        262: true,
        / dbgstat /        263: 2, / disabled-since-boot /
        / manifests /      273: [
@@ -3388,7 +3415,7 @@ A.1.2.  Submodules for Board and Device
    / document, but they are a valid use of submodules.         /
 
    {
-       / eat_nonce /       10: h'948f8860d13a463e8e',
+       / eat_nonce /       10: h'e253cabedc9eec24ac4e25bcbeaf7765'
        / ueid /           256: h'0198f50a4ff6c05861c8860d13a638ea',
        / oemid /          258: h'894823', / IEEE OUI format OEM ID /
        / hwmodel /        259: h'549dcecc8b987c737b44e40f7c635ce8'
@@ -3426,7 +3453,7 @@ A.1.3.  EAT Produced by Attestation Hardware Block
    / UEID). /
 
    {
-       / eat_nonce /       10: h'948f8860d13a463e',
+       / eat_nonce /       10: h'd79b964ddd5471c1393c8888',
        / ueid /           256: h'0198f50a4ff6c05861c8860d13a638ea',
        / oemid /          258: 64242, / Private Enterprise Number /
        / oemboot /        262: true,
@@ -3457,7 +3484,8 @@ A.1.4.  Key / Key Store Attestation
 
 
    {
-       / eat_nonce /       10: h'948f8860d13a463e',
+       / eat_nonce /       10: h'99b67438dba40743266f70bf75feb1026d5134
+                                 97a229bfe8'
        / oemboot /        262: true,
        / dbgstat /        263: 2, / disabled-since-boot /
        / manifests /      273: [
@@ -3492,7 +3520,7 @@ A.1.4.  Key / Key Store Attestation
 
        / submods /        266 : {
                               "HLOS" : { / submod for high-level OS /
-            / eat_nonce /         10: h'948f8860d13a463e',
+            / eat_nonce /         10: h'8b0b28782a23d3f6',
               / oemboot /        262: true,
               / manifests /      273: [
                                    [ 121, / CoAP Content ID. A      /
@@ -3531,7 +3559,7 @@ A.1.5.  Software Measurements of an IoT Device
    / the IoT OS and puts the measurements in the submodule.            /
 
    {
-       / eat_nonce / 10: h'948f8860d13a463e',
+       / eat_nonce / 10: h'5e19fba4483c7896'
        / oemboot /  262: true,
        / dbgstat /  263: 2, / disabled-since-boot /
        / oemid /    258: h'8945ad', / IEEE CID based /
@@ -3781,7 +3809,7 @@ A.2.2.  Detached EAT Bundle
    / attestation HW block                                         /
 
    {
-       / eat_nonce /       10: h'948f8860d13a463e',
+       / eat_nonce /       10: h'3515744961254b41a6cf9c02',
        / ueid /           256: h'0198f50a4ff6c05861c8860d13a638ea',
        / oemid /          258: 64242, / Private Enterprise Number /
        / oemboot /        262: true,
@@ -3981,6 +4009,9 @@ B.2.  No Use of UUID
    It takes the view that hardware, software and/or manufacturing
    process implement UEID in a simple and direct way.
 
+   Note also that that a type 2 UEID (EUI/MAC) is only 7 bytes compared
+   to 16 for a UUID.
+
 Appendix C.  EAT Relation to IEEE.802.1AR Secure Device Identity (DevID)
 
    This section describes several distinct ways in which an IEEE IDevID
@@ -3995,7 +4026,7 @@ Appendix C.  EAT Relation to IEEE.802.1AR Secure Device Identity (DevID)
    message formats the DevID secret is used to sign a nonce or similar
    to prove the association of the DevID certificates with the device.
 
-   By contrast, EAT standardize a message format that is sent to a
+   By contrast, EAT standardizes a message format that is sent to a
    relying party, the very thing that is not defined in [IEEE.802.1AR].
    Nor does EAT give details on how keys, data and such are stored
    protected and accessed.  EAT is intended to work with a variety of
@@ -4360,37 +4391,11 @@ Appendix G.  Changes from Previous Drafts
    history is available via the IETF Datatracker's record for this
    document.
 
-G.1.  From draft-ietf-rats-eat-19
+G.1.  From draft-ietf-rats-eat-21
 
-   *  Prefer the term "encoding" over "format" when referring to CBOR
-      and JSON.
+   *  IETF is change controller rather than IESG for IANA registrations
 
-   *  Separate sections for creating and consuming UEIDs
-
-   *  Base location on W3C reference directly and WGS84 indirectly
-
-   *  The option for a hash-based OEMID is removed
-
-   *  Rename Appendix E and clarify its purpose
-
-   *  Require presence of oemid claim if hwmodel is present; same for
-      swversion and swname
-
-   *  Use normative language to describe the constrained device profile
-
-   *  Clarifications around the terms "token", "message" and "claims-
-      set"
-
-   *  Move discussion of verification keys out of appendix into security
-      considerations
-
-   *  Improve definitions in measurement results claim
-
-   *  Require a CoAP id for manifest formats
-
-   *  Clarifications for manifests claim
-
-   *  Lots of rewording of paragraphs describing "entity"
+   *  Change "Indicate" to "Indcates"
 
 Contributors
 
