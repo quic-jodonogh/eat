@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-08-10T18:26:14.544088+00:00",
+  "timestamp": "2023-08-16T18:03:33.901726+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -21375,7 +21375,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-08-10T04:27:30Z",
-      "updatedAt": "2023-08-10T18:15:18Z",
+      "updatedAt": "2023-08-10T18:26:15Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "fba63153ed34b4b50d49034fc6bb5f40015e6f41",
@@ -21395,7 +21395,61 @@
           "updatedAt": "2023-08-10T11:53:35Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOCEWCXc5dumQY",
+          "commit": {
+            "abbreviatedOid": "b63a53d"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-08-10T18:26:15Z",
+          "updatedAt": "2023-08-10T18:26:15Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 403,
+      "id": "PR_kwDOCEWCXc5Xqx2C",
+      "title": "Fixes for genart review",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/403",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-08-10T18:58:37Z",
+      "updatedAt": "2023-08-16T18:02:26Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "fba63153ed34b4b50d49034fc6bb5f40015e6f41",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "genart",
+      "headRefOid": "16059be0ff834b18de2467b6bbfcbc295ba81466",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOCEWCXc5du31L",
+          "commit": {
+            "abbreviatedOid": "b971a54"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-08-10T19:09:51Z",
+          "updatedAt": "2023-08-10T19:09:51Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
