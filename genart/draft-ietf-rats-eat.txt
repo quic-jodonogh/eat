@@ -2745,7 +2745,7 @@ Table of Contents
 
    *  Claim Value Type(s): byte string
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2760,7 +2760,7 @@ Table of Contents
 
    *  Claim Value Type(s): byte string
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2775,7 +2775,7 @@ Table of Contents
 
    *  Claim Value Type(s): map
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2790,7 +2790,7 @@ Table of Contents
 
    *  Claim Value Type(s): byte string or integer
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2805,7 +2805,7 @@ Table of Contents
 
    *  Claim Value Type(s): byte string
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2820,14 +2820,14 @@ Table of Contents
 
    *  Claim Value Type(s): array
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
 
-   *  Claim Name: OEM Authortised Boot
+   *  Claim Name: OEM Authorised Boot
 
-   *  Claim Description: Indicate whether the software booted was OEM
+   *  Claim Description: Indicates whether the software booted was OEM
       authorized
 
    *  JWT Claim Name: "oemboot"
@@ -2836,14 +2836,14 @@ Table of Contents
 
    *  Claim Value Type(s): Boolean
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
 
    *  Claim Name: Debug Status
 
-   *  Claim Description: Indicate status of debug facilities
+   *  Claim Description: Indicates status of debug facilities
 
    *  JWT Claim Name: "dbgstat"
 
@@ -2851,7 +2851,7 @@ Table of Contents
 
    *  Claim Value Type(s): integer or string
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2866,7 +2866,7 @@ Table of Contents
 
    *  Claim Value Type(s): map
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2881,7 +2881,7 @@ Table of Contents
 
    *  Claim Value Type(s): URI or OID
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2896,7 +2896,7 @@ Table of Contents
 
    *  Claim Value Type(s): map
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2911,7 +2911,7 @@ Table of Contents
 
    *  Claim Value Type(s): unsigned integer
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2927,7 +2927,7 @@ Table of Contents
 
    *  Claim Value Type(s): uint
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2942,7 +2942,7 @@ Table of Contents
 
    *  Claim Value Type(s): bytes
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2958,7 +2958,7 @@ Table of Contents
 
    *  Claim Value Type(s): array
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2973,7 +2973,7 @@ Table of Contents
 
    *  Claim Value Type(s): map
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -2988,7 +2988,7 @@ Table of Contents
 
    *  Claim Value Type(s): map
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -3004,7 +3004,7 @@ Table of Contents
 
    *  Claim Value Type(s): array
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -3020,7 +3020,7 @@ Table of Contents
 
    *  Claim Value Type(s): array
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -3036,7 +3036,7 @@ Table of Contents
 
    *  Claim Value Type(s): array
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -3051,7 +3051,7 @@ Table of Contents
 
    *  Claim Value Type(s): integer or string
 
-   *  Change Controller: IESG
+   *  Change Controller: IETF
 
    *  Specification Document(s): *this document*
 
@@ -4399,6 +4399,12 @@ G.1.  From draft-ietf-rats-eat-21
 
    *  Clarification in 6.1.12 that "receiver accepts token with claims
       it does not understand"
+
+   *  Abstract wording improvement
+
+   *  IETF is change controller rather than IESG for IANA registrations
+
+   *  Change "Indicate" to "Indcates"
 
 Contributors
 
