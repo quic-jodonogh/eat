@@ -5,11 +5,11 @@
 RATS                                                        L. Lundblade
 Internet-Draft                                       Security Theory LLC
 Intended status: Standards Track                              G. Mandyam
-Expires: 17 February 2024                                  J. O'Donoghue
+Expires: 6 March 2024                                      J. O'Donoghue
                                               Qualcomm Technologies Inc.
                                                               C. Wallace
                                                 Red Hound Software, Inc.
-                                                          16 August 2023
+                                                        3 September 2023
 
 
                    The Entity Attestation Token (EAT)
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 17 February 2024.
+   This Internet-Draft will expire on 6 March 2024.
 
 Copyright Notice
 
@@ -3074,8 +3074,8 @@ Table of Contents
 10.4.  CBOR Tag for Detached EAT Bundle Registered by this Document
 
    In the registry [IANA.cbor-tags], IANA is requested to allocate the
-   following tag from the FCFS space, with the present document as the
-   specification reference.
+   following tag from the Specification Required space, with the present
+   document as the specification reference.
 
           +========+============+===============================+
           | Tag    | Data Items | Semantics                     |
