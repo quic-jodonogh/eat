@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-09-03T19:12:44.529531+00:00",
+  "timestamp": "2023-09-04T18:25:16.042286+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -21454,6 +21454,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 404,
+      "id": "PR_kwDOCEWCXc5ZgjrM",
+      "title": "Add section on partial and full profiles",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/404",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-09-04T18:24:25Z",
+      "updatedAt": "2023-09-04T18:24:25Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "partial-profile",
+      "headRefOid": "53368e6b3809b4be082c0642635c561c44ff1351",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
