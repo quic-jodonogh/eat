@@ -5,11 +5,11 @@
 RATS                                                        L. Lundblade
 Internet-Draft                                       Security Theory LLC
 Intended status: Standards Track                              G. Mandyam
-Expires: 12 March 2024                                     J. O'Donoghue
+Expires: 14 March 2024                                     J. O'Donoghue
                                               Qualcomm Technologies Inc.
                                                               C. Wallace
                                                 Red Hound Software, Inc.
-                                                        9 September 2023
+                                                       11 September 2023
 
 
                    The Entity Attestation Token (EAT)
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 March 2024.
+   This Internet-Draft will expire on 14 March 2024.
 
 Copyright Notice
 
@@ -1215,8 +1215,8 @@ Table of Contents
    CoSWID might be signed independently before it is included in an EAT.
    When signed manifests are put into an EAT, the manufacturer's
    signature SHOULD be included even though an EAT's signature will also
-   cover the manifest.  This allows the receiver to verify the manifest
-   directly with the manufacturer if they wish.
+   cover the manifest.  This allows the receiver to directly verify the
+   manufacturer-originated manifest.
 
    This claim allows multiple formats for the manifest.  For example,
    the manifest may be a CBOR-encoded CoSWID, an XML-encoded SWID or
@@ -3200,9 +3200,9 @@ Table of Contents
               O. Rønningstad, "A Concise Binary Object Representation
               (CBOR)-based Serialization Format for the Software Updates
               for Internet of Things (SUIT) Manifest", Work in Progress,
-              Internet-Draft, draft-ietf-suit-manifest-22, 27 February
+              Internet-Draft, draft-ietf-suit-manifest-23, 10 September
               2023, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              suit-manifest-22>.
+              suit-manifest-23>.
 
    [ThreeGPP.IMEI]
               3GPP, "3rd Generation Partnership Project; Technical
@@ -4406,6 +4406,8 @@ G.1.  From draft-ietf-rats-eat-21
    *  IETF is change controller rather than IESG for IANA registrations
 
    *  Change "Indicate" to "Indcates"
+
+   *  Clarify purpose of including manufacturer manifest signatures
 
 Contributors
 
