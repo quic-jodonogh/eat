@@ -5,11 +5,11 @@
 RATS                                                        L. Lundblade
 Internet-Draft                                       Security Theory LLC
 Intended status: Standards Track                              G. Mandyam
-Expires: 12 March 2024                                     J. O'Donoghue
+Expires: 14 March 2024                                     J. O'Donoghue
                                               Qualcomm Technologies Inc.
                                                               C. Wallace
                                                 Red Hound Software, Inc.
-                                                        9 September 2023
+                                                       11 September 2023
 
 
                    The Entity Attestation Token (EAT)
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 March 2024.
+   This Internet-Draft will expire on 14 March 2024.
 
 Copyright Notice
 
@@ -715,27 +715,27 @@ Table of Contents
    |      |      | See the length analysis in Appendix B.             |
    +------+------+----------------------------------------------------+
    | 0x02 | IEEE | This makes use of the device idenfication scheme   |
-   |      | EUI  | operated by the IEEE for MAC addresses and other.  |
-   |      |      | An EUI is either an EUI-48, EUI-60 or EUI-64 and   |
-   |      |      | made up of an OUI, OUI-36 or a CID, different      |
-   |      |      | registered company identifiers, and some unique    |
-   |      |      | per-entity identifier.  EUIs are often the same as |
-   |      |      | or similar to MAC addresses.  This type includes   |
-   |      |      | MAC-48, an obsolete name for EUI-48.  (Note that   |
-   |      |      | while entities with multiple network interfaces    |
-   |      |      | may have multiple MAC addresses, there is only one |
-   |      |      | UEID for an entity) [IEEE.802-2001], [OUI.Guide].  |
+   |      | EUI  | operated by the IEEE.  An EUI is either an EUI-48, |
+   |      |      | EUI-60 or EUI-64 and made up of an OUI, OUI-36 or  |
+   |      |      | a CID, different registered company identifiers,   |
+   |      |      | and some unique per-entity identifier.  EUIs are   |
+   |      |      | often the same as or similar to MAC addresses.     |
+   |      |      | This type includes MAC-48, an obsolete name for    |
+   |      |      | EUI-48.  (Note that while entities with multiple   |
+   |      |      | network interfaces may have multiple MAC           |
+   |      |      | addresses, there is only one UEID for an entity)   |
+   |      |      | [IEEE.802-2001], [OUI.Guide].                      |
    +------+------+----------------------------------------------------+
    | 0x03 | IMEI | This makes use of the device identification scheme |
-   |      |      | operated by the GSMA for mobile phones and other.  |
-   |      |      | This is a 14-digit identifier consisting of an     |
-   |      |      | 8-digit Type Allocation Code (TAC) and a 6-digit   |
-   |      |      | serial number allocated by the manufacturer, which |
-   |      |      | SHALL be encoded as byte string of length 14 with  |
-   |      |      | each byte as the digit's value (not the ASCII      |
-   |      |      | encoding of the digit; the digit 3 encodes as      |
-   |      |      | 0x03, not 0x33).  The IMEI value encoded SHALL NOT |
-   |      |      | include Luhn checksum or SVN information.  See     |
+   |      |      | operated by the GSMA for mobile devices.  This is  |
+   |      |      | a 14-digit identifier consisting of an 8-digit     |
+   |      |      | Type Allocation Code (TAC) and a 6-digit serial    |
+   |      |      | number allocated by the manufacturer, which SHALL  |
+   |      |      | be encoded as byte string of length 14 with each   |
+   |      |      | byte as the digit's value (not the ASCII encoding  |
+   |      |      | of the digit; the digit 3 encodes as 0x03, not     |
+   |      |      | 0x33).  The IMEI value encoded SHALL NOT include   |
+   |      |      | Luhn checksum or SVN information.  See             |
    |      |      | [ThreeGPP.IMEI].                                   |
    +------+------+----------------------------------------------------+
 
@@ -3201,9 +3201,9 @@ Table of Contents
               O. Rønningstad, "A Concise Binary Object Representation
               (CBOR)-based Serialization Format for the Software Updates
               for Internet of Things (SUIT) Manifest", Work in Progress,
-              Internet-Draft, draft-ietf-suit-manifest-22, 27 February
+              Internet-Draft, draft-ietf-suit-manifest-23, 10 September
               2023, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              suit-manifest-22>.
+              suit-manifest-23>.
 
    [ThreeGPP.IMEI]
               3GPP, "3rd Generation Partnership Project; Technical
@@ -4407,6 +4407,8 @@ G.1.  From draft-ietf-rats-eat-21
    *  IETF is change controller rather than IESG for IANA registrations
 
    *  Change "Indicate" to "Indcates"
+
+   *  Better into wording for type 2 and 3 UEIDs
 
 Contributors
 
