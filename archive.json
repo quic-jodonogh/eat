@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-09-09T18:07:48.457227+00:00",
+  "timestamp": "2023-09-11T21:22:08.496439+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -21467,7 +21467,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-09-04T18:24:25Z",
-      "updatedAt": "2023-09-04T18:24:25Z",
+      "updatedAt": "2023-09-11T11:15:14Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
@@ -21479,7 +21479,48 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOCEWCXc5gizxO",
+          "commit": {
+            "abbreviatedOid": "53368e6"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-09-11T11:14:33Z",
+          "updatedAt": "2023-09-11T11:14:33Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "Should a profile include trust anchor key material or a reference to key material? This is required to \"fully guarantee  interoperability\". At present, only a key ID is included.",
+              "createdAt": "2023-09-11T11:14:33Z",
+              "updatedAt": "2023-09-11T11:14:33Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOCEWCXc5gi0BZ",
+          "commit": {
+            "abbreviatedOid": "53368e6"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-09-11T11:15:14Z",
+          "updatedAt": "2023-09-11T11:15:14Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "Should this be MUST NOT? When would it be OK to use eat_profile to identify a partial profile?",
+              "createdAt": "2023-09-11T11:15:14Z",
+              "updatedAt": "2023-09-11T11:15:14Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 405,
@@ -21493,7 +21534,7 @@
       "labels": [],
       "body": "Expands most acronyms on first use.\r\n\r\nAn exception for these because they are widely know and used only in a minor way\r\nASCII \r\nCPU \r\nHTTP\r\nTLS \r\n\r\n\r\nFixed use of \"URI\" and \"URL\" for DLOA claim\r\n\r\nReplaces \"TEEP Manifest\" (wrong) with \"SUIT manifest\" (right)\r\n\r\nCOAP -> CoAP\r\n\r\n\r\n\r\n\r\n",
       "createdAt": "2023-09-06T20:16:08Z",
-      "updatedAt": "2023-09-06T20:16:08Z",
+      "updatedAt": "2023-09-11T11:09:01Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
@@ -21505,7 +21546,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOCEWCXc5gixfI",
+          "commit": {
+            "abbreviatedOid": "b121311"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-09-11T11:09:01Z",
+          "updatedAt": "2023-09-11T11:09:01Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 406,
@@ -21519,7 +21574,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-09-07T01:06:01Z",
-      "updatedAt": "2023-09-07T04:06:32Z",
+      "updatedAt": "2023-09-11T11:07:50Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
@@ -21531,7 +21586,28 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOCEWCXc5gixDv",
+          "commit": {
+            "abbreviatedOid": "75b2866"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-09-11T11:07:49Z",
+          "updatedAt": "2023-09-11T11:07:50Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "Should there be a similar requirement for oemid to be present when dbgstat or hwmodel are present as #407 added for oemboot?",
+              "createdAt": "2023-09-11T11:07:50Z",
+              "updatedAt": "2023-09-11T11:07:50Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 407,
@@ -21545,7 +21621,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-09-07T15:40:26Z",
-      "updatedAt": "2023-09-07T15:40:26Z",
+      "updatedAt": "2023-09-11T11:04:53Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
@@ -21557,7 +21633,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOCEWCXc5giv7r",
+          "commit": {
+            "abbreviatedOid": "51d7c64"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-09-11T11:04:53Z",
+          "updatedAt": "2023-09-11T11:04:53Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 408,
@@ -21571,7 +21661,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-09-07T16:18:38Z",
-      "updatedAt": "2023-09-07T16:18:38Z",
+      "updatedAt": "2023-09-11T11:04:31Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
@@ -21583,7 +21673,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOCEWCXc5givzQ",
+          "commit": {
+            "abbreviatedOid": "2f54bc2"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-09-11T11:04:31Z",
+          "updatedAt": "2023-09-11T11:04:31Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 409,
@@ -21597,7 +21701,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-09-07T16:28:34Z",
-      "updatedAt": "2023-09-07T16:28:34Z",
+      "updatedAt": "2023-09-11T11:03:49Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
@@ -21609,7 +21713,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOCEWCXc5givhs",
+          "commit": {
+            "abbreviatedOid": "b0580f8"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-09-11T11:03:49Z",
+          "updatedAt": "2023-09-11T11:03:49Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 410,
@@ -21623,7 +21741,7 @@
       "labels": [],
       "body": "Makes the reference to RATS Architecture normative\r\n\r\nRefer to 9334 instead of the draft.\r\n",
       "createdAt": "2023-09-07T18:38:59Z",
-      "updatedAt": "2023-09-07T18:38:59Z",
+      "updatedAt": "2023-09-11T11:03:32Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
@@ -21635,7 +21753,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOCEWCXc5givao",
+          "commit": {
+            "abbreviatedOid": "36c2f2e"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-09-11T11:03:32Z",
+          "updatedAt": "2023-09-11T11:03:32Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 411,
@@ -21675,7 +21807,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-09-09T18:07:03Z",
-      "updatedAt": "2023-09-09T18:07:03Z",
+      "updatedAt": "2023-09-11T11:03:08Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
@@ -21687,7 +21819,195 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOCEWCXc5givQc",
+          "commit": {
+            "abbreviatedOid": "b92a5a0"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-09-11T11:03:08Z",
+          "updatedAt": "2023-09-11T11:03:08Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 413,
+      "id": "PR_kwDOCEWCXc5Z8BEG",
+      "title": "Little intro for UEID types 2 and 3",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/413",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Clarifies where IEEE EUI and IMEI come from.",
+      "createdAt": "2023-09-09T18:21:40Z",
+      "updatedAt": "2023-09-11T11:02:26Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "ueid-description",
+      "headRefOid": "7f1f9234b2bd55a4040bb284fc135cbfc50d7d26",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOCEWCXc5giu-v",
+          "commit": {
+            "abbreviatedOid": "7f1f923"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-09-11T11:02:26Z",
+          "updatedAt": "2023-09-11T11:02:26Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "\"and other\" what? Same comment in first sentence below. Both are missing a word or two.",
+              "createdAt": "2023-09-11T11:02:26Z",
+              "updatedAt": "2023-09-11T11:02:26Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 414,
+      "id": "PR_kwDOCEWCXc5Z8DHD",
+      "title": "Wording improvements suggestd by D Miguault",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/414",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-09-09T19:05:28Z",
+      "updatedAt": "2023-09-11T10:51:18Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "migault-nits",
+      "headRefOid": "3bb42ee101ddfa1b36e1ceb5b1252abc84287c5a",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOCEWCXc5giqjq",
+          "commit": {
+            "abbreviatedOid": "3bb42ee"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-09-11T10:51:18Z",
+          "updatedAt": "2023-09-11T10:51:18Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 415,
+      "id": "PR_kwDOCEWCXc5Z8D4l",
+      "title": "Why manifest sigs should be retained",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/415",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-09-09T19:22:00Z",
+      "updatedAt": "2023-09-11T21:21:04Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "manifest-sig",
+      "headRefOid": "186e08c63de906008136858457cf4bf1a6f4ce8e",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOCEWCXc5gir9r",
+          "commit": {
+            "abbreviatedOid": "52c981e"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-09-11T10:55:02Z",
+          "updatedAt": "2023-09-11T10:55:02Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "The phrase \"directly with\" connotes some interaction with the manufacturer that isn't necessary. Maybe \"This allows the receiver to verify the manufacturer originated the manifest\"",
+              "createdAt": "2023-09-11T10:55:02Z",
+              "updatedAt": "2023-09-11T10:55:02Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 416,
+      "id": "PR_kwDOCEWCXc5Z8FU9",
+      "title": "Fill in missing parts of dev URN definition",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/416",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This addresses comment by Jari Arrko.",
+      "createdAt": "2023-09-09T19:55:26Z",
+      "updatedAt": "2023-09-11T10:59:51Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "devurn",
+      "headRefOid": "131c29afcb1ff8a5fbebab6b7382420fac79aad9",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOCEWCXc5git5B",
+          "commit": {
+            "abbreviatedOid": "131c29a"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-09-11T10:59:51Z",
+          "updatedAt": "2023-09-11T10:59:51Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
