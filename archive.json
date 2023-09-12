@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-09-11T21:22:08.496439+00:00",
+  "timestamp": "2023-09-12T16:49:20.240891+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -21574,7 +21574,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-09-07T01:06:01Z",
-      "updatedAt": "2023-09-11T11:07:50Z",
+      "updatedAt": "2023-09-12T16:48:43Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
@@ -21606,6 +21606,26 @@
               "updatedAt": "2023-09-11T11:07:50Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOCEWCXc5guJYi",
+          "commit": {
+            "abbreviatedOid": "75b2866"
+          },
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-09-12T16:48:42Z",
+          "updatedAt": "2023-09-12T16:48:43Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "There is a requirement for hwmodel and hwversion. Added one for dbgstat.",
+              "createdAt": "2023-09-12T16:48:42Z",
+              "updatedAt": "2023-09-12T16:48:43Z"
+            }
+          ]
         }
       ]
     },
@@ -21621,13 +21641,13 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-09-07T15:40:26Z",
-      "updatedAt": "2023-09-11T11:04:53Z",
+      "updatedAt": "2023-09-12T16:47:54Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "oemboot-must",
-      "headRefOid": "51d7c64ea85abe8120d26f6653f76a863da53911",
+      "headRefOid": "4ce55caa7b0b34844611c8718005f53b64ce3732",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -21847,13 +21867,13 @@
       "labels": [],
       "body": "Clarifies where IEEE EUI and IMEI come from.",
       "createdAt": "2023-09-09T18:21:40Z",
-      "updatedAt": "2023-09-11T11:02:26Z",
+      "updatedAt": "2023-09-11T21:28:02Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "ueid-description",
-      "headRefOid": "7f1f9234b2bd55a4040bb284fc135cbfc50d7d26",
+      "headRefOid": "3621c85834736dcd676dfa363aff6ee98c0b8214",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -21877,6 +21897,26 @@
               "body": "\"and other\" what? Same comment in first sentence below. Both are missing a word or two.",
               "createdAt": "2023-09-11T11:02:26Z",
               "updatedAt": "2023-09-11T11:02:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOCEWCXc5gnFp9",
+          "commit": {
+            "abbreviatedOid": "7f1f923"
+          },
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-09-11T21:28:02Z",
+          "updatedAt": "2023-09-11T21:28:02Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "See if you like the update better. Thx for reviewing.",
+              "createdAt": "2023-09-11T21:28:02Z",
+              "updatedAt": "2023-09-11T21:28:02Z"
             }
           ]
         }
@@ -21934,7 +21974,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-09-09T19:22:00Z",
-      "updatedAt": "2023-09-11T21:21:04Z",
+      "updatedAt": "2023-09-11T21:22:18Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
@@ -21964,6 +22004,26 @@
               "body": "The phrase \"directly with\" connotes some interaction with the manufacturer that isn't necessary. Maybe \"This allows the receiver to verify the manufacturer originated the manifest\"",
               "createdAt": "2023-09-11T10:55:02Z",
               "updatedAt": "2023-09-11T10:55:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOCEWCXc5gnEFf",
+          "commit": {
+            "abbreviatedOid": "52c981e"
+          },
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-09-11T21:22:17Z",
+          "updatedAt": "2023-09-11T21:22:18Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "Thx Carl. Think I fixed. Let me know what you think.",
+              "createdAt": "2023-09-11T21:22:17Z",
+              "updatedAt": "2023-09-11T21:22:18Z"
             }
           ]
         }
