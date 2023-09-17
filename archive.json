@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-09-12T16:49:20.240891+00:00",
+  "timestamp": "2023-09-17T21:35:44.788192+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -4696,6 +4696,22 @@
           "updatedAt": "2023-06-26T19:15:54Z"
         }
       ]
+    },
+    {
+      "number": 419,
+      "id": "I_kwDOCEWCXc5xKMR0",
+      "title": "use rfc2648 for profile identification",
+      "url": "https://github.com/ietf-rats-wg/eat/issues/419",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "_(This is just a suggestion that I leave to the discretion of the editors.)_\r\n\r\nThere's an opportunity to shorten the Constrained Device Standard Profile\r\nidentifier using [RFC2648](https://datatracker.ietf.org/doc/rfc2648/) URNs, i.e., using `urn:ietf:rfc:XXXX` rather than `https://www.rfc-editor.org/rfc/rfcXXXX`.\r\n\r\nThis would remove 21 bytes from the wire per token, which is in line with the \"constrained device\" scope we are trying to cover here.",
+      "createdAt": "2023-09-15T14:03:00Z",
+      "updatedAt": "2023-09-15T14:03:00Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -21467,18 +21483,33 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-09-04T18:24:25Z",
-      "updatedAt": "2023-09-11T11:15:14Z",
+      "updatedAt": "2023-09-13T10:27:07Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "partial-profile",
-      "headRefOid": "53368e6b3809b4be082c0642635c561c44ff1351",
+      "headRefOid": "485172e28b57e0e4f248b67114536ed711a629bf",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "gmandyam",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Lack of a specific alg. identifier does not imply that interoperability is not possible.  For instance, https://datatracker.ietf.org/doc/html/rfc8152#appendix-A.1 discusses the use of implicit algorithms.  In my interpretation of the PQC example, if the alg. field is left empty but the kid points to a PQC keypair then interoperability is still possible without having to re-define the profile to explicitly include the PQC algm.",
+          "createdAt": "2023-09-12T19:50:27Z",
+          "updatedAt": "2023-09-12T19:50:27Z"
+        },
+        {
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Re: specific algorithm and interoperability being possible, my point was that \"fully guaranteed\" doesn't fit because the recipient might have no idea where to get the verification key material. The \"fully guaranteed\" verbiage is new, and doesn't strike me as quite right without considering that. Likewise for decryption key.",
+          "createdAt": "2023-09-12T22:27:34Z",
+          "updatedAt": "2023-09-12T22:27:34Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOCEWCXc5gizxO",
@@ -21519,6 +21550,66 @@
               "updatedAt": "2023-09-11T11:15:14Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOCEWCXc5guV1x",
+          "commit": {
+            "abbreviatedOid": "53368e6"
+          },
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-09-12T17:20:40Z",
+          "updatedAt": "2023-09-12T17:20:40Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "#417 \r\n\r\nIt seems like a slippery slope to start discussing key formats, key distribution and key trust.",
+              "createdAt": "2023-09-12T17:20:40Z",
+              "updatedAt": "2023-09-12T17:20:40Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOCEWCXc5gusq8",
+          "commit": {
+            "abbreviatedOid": "53368e6"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-09-12T18:07:43Z",
+          "updatedAt": "2023-09-12T18:07:43Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "There's no need to get into discussing key formats, etc. Maybe something like:\r\n\r\n```\r\nA \"full\" profile is one that fully guarantees interoperability when a sender and receiver both adhere to it and have access to any necessary verification, decryption or MAC key(s), as discussed in sections 6.2.9 and 9.6.\r\n```",
+              "createdAt": "2023-09-12T18:07:43Z",
+              "updatedAt": "2023-09-12T18:07:43Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOCEWCXc5gz5hs",
+          "commit": {
+            "abbreviatedOid": "485172e"
+          },
+          "author": "SimonFrost-Arm",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-09-13T10:26:59Z",
+          "updatedAt": "2023-09-13T10:27:07Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "FYI, we've reviewed the text in the PSA (partial!) profile and will be making changes to clarify the baseline vs implementation specifics. PRs in preparation. \r\nPerhaps this (L1304) statement instead could say something like:\r\nPartial profiles are allowed, but MUST make clear that they are only used as a source to derive deployment specific profiles.",
+              "createdAt": "2023-09-13T10:26:59Z",
+              "updatedAt": "2023-09-13T10:27:07Z"
+            }
+          ]
         }
       ]
     },
@@ -21527,24 +21618,26 @@
       "id": "PR_kwDOCEWCXc5ZuBK-",
       "title": "Expand most acronyms; other fixes",
       "url": "https://github.com/ietf-rats-wg/eat/pull/405",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "laurencelundblade",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Expands most acronyms on first use.\r\n\r\nAn exception for these because they are widely know and used only in a minor way\r\nASCII \r\nCPU \r\nHTTP\r\nTLS \r\n\r\n\r\nFixed use of \"URI\" and \"URL\" for DLOA claim\r\n\r\nReplaces \"TEEP Manifest\" (wrong) with \"SUIT manifest\" (right)\r\n\r\nCOAP -> CoAP\r\n\r\n\r\n\r\n\r\n",
       "createdAt": "2023-09-06T20:16:08Z",
-      "updatedAt": "2023-09-11T11:09:01Z",
+      "updatedAt": "2023-09-17T21:34:37Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "acronyms",
       "headRefOid": "b121311f6a4a4734cefb96033659a4b43d7fdcbc",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2023-09-17T21:34:32Z",
+      "mergedAt": "2023-09-17T21:34:32Z",
+      "mergedBy": "laurencelundblade",
+      "mergeCommit": {
+        "oid": "8d38f1feb4de7ca09dc522e0b37821e83b115301"
+      },
       "comments": [],
       "reviews": [
         {
@@ -21867,7 +21960,7 @@
       "labels": [],
       "body": "Clarifies where IEEE EUI and IMEI come from.",
       "createdAt": "2023-09-09T18:21:40Z",
-      "updatedAt": "2023-09-11T21:28:02Z",
+      "updatedAt": "2023-09-12T18:10:10Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
@@ -21919,6 +22012,19 @@
               "updatedAt": "2023-09-11T21:28:02Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOCEWCXc5gutnr",
+          "commit": {
+            "abbreviatedOid": "3621c85"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-09-12T18:10:10Z",
+          "updatedAt": "2023-09-12T18:10:10Z",
+          "comments": []
         }
       ]
     },
@@ -21974,7 +22080,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-09-09T19:22:00Z",
-      "updatedAt": "2023-09-11T21:22:18Z",
+      "updatedAt": "2023-09-12T18:09:34Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
@@ -22026,6 +22132,19 @@
               "updatedAt": "2023-09-11T21:22:18Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOCEWCXc5gutbM",
+          "commit": {
+            "abbreviatedOid": "186e08c"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-09-12T18:09:34Z",
+          "updatedAt": "2023-09-12T18:09:34Z",
+          "comments": []
         }
       ]
     },
@@ -22068,6 +22187,87 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 417,
+      "id": "PR_kwDOCEWCXc5aJxHB",
+      "title": "clarify verification key in standard profile",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/417",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-09-12T17:18:45Z",
+      "updatedAt": "2023-09-12T18:03:02Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "prof-kid",
+      "headRefOid": "5445c55d999ace0fb94adb2fe925f5f7267c6cee",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOCEWCXc5guq7L",
+          "commit": {
+            "abbreviatedOid": "5445c55"
+          },
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "I think you mean:\r\n```\r\n (It is assumed the receiver has access to a database of trusted verification keys which allows lookup of a key given a verification key ID; the key format and means of distribution are beyond the scope of this profile) \r\n```\r\nBut, I think I'd address this not here but where \"fully guaranteed\" is introduced.",
+          "createdAt": "2023-09-12T18:03:02Z",
+          "updatedAt": "2023-09-12T18:03:02Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 418,
+      "id": "PR_kwDOCEWCXc5acSnr",
+      "title": "minor typo fix in the \"constrained profile\" table",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/418",
+      "state": "CLOSED",
+      "author": "thomas-fossati",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Also, while we are in the area, there's an opportunity to shorten the profile identifier using [RFC2648](https://datatracker.ietf.org/doc/rfc2648/) URNs, i.e.: `urn:ietf:id:ietf-rats-eat-21` and `urn:ietf:rfc:XXXX` on publication.\r\n",
+      "createdAt": "2023-09-15T13:34:37Z",
+      "updatedAt": "2023-09-15T13:56:12Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
+      "headRepository": "thomas-fossati/eat",
+      "headRefName": "patch-4",
+      "headRefOid": "1642fe669628a31a5c707230d57831641c52e777",
+      "closedAt": "2023-09-15T13:56:11Z",
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "carl-wallace",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This looks like a duplicate of #411 ",
+          "createdAt": "2023-09-15T13:41:50Z",
+          "updatedAt": "2023-09-15T13:41:50Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Oops, yes, I hadn't seen it, sorry!",
+          "createdAt": "2023-09-15T13:56:11Z",
+          "updatedAt": "2023-09-15T13:56:11Z"
+        }
+      ],
+      "reviews": []
     }
   ]
 }
