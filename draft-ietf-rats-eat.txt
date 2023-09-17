@@ -5,11 +5,11 @@
 RATS                                                        L. Lundblade
 Internet-Draft                                       Security Theory LLC
 Intended status: Standards Track                              G. Mandyam
-Expires: 6 March 2024                                      J. O'Donoghue
+Expires: 20 March 2024                                     J. O'Donoghue
                                               Qualcomm Technologies Inc.
                                                               C. Wallace
                                                 Red Hound Software, Inc.
-                                                        3 September 2023
+                                                       17 September 2023
 
 
                    The Entity Attestation Token (EAT)
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 March 2024.
+   This Internet-Draft will expire on 20 March 2024.
 
 Copyright Notice
 
@@ -230,7 +230,8 @@ Table of Contents
 
    *  Configuration and state of a device
 
-   *  Environmental characteristics of a device like its GPS location
+   *  Environmental characteristics of a device like its Global
+      Positioning Sytem (GPS) location
 
    *  Formal certifications received
 
@@ -254,7 +255,8 @@ Table of Contents
    Nesting of tokens and claims sets is accommodated for composite
    devices that have multiple subsystems.
 
-   An EAT may be encoded in either JSON [RFC8259] or CBOR [RFC8949] as
+   An EAT may be encoded in either JavaScript Object Notation (JSON)
+   [RFC8259] or Concise Binary Object Representation (CBOR) [RFC8949] as
    needed for each use case.  EAT is built on CBOR Web Token (CWT)
    [RFC8392] and JSON Web Token (JWT) [RFC7519] and inherits all their
    characteristics and their security mechanisms.  Like CWT and JWT, EAT
@@ -287,13 +289,13 @@ Table of Contents
 
    *  A Secure Element
 
-   *  A TEE
+   *  A Trusted Execution Environment (TEE)
 
    *  A network card in a router
 
    *  A router, perhaps with each network card in the router a submodule
 
-   *  An IoT device
+   *  An Internet of Things (IoT) device
 
    *  An individual process
 
@@ -319,7 +321,8 @@ Table of Contents
 
    *  Claims defined in CDDL and serialized using CBOR or JSON
 
-   *  Security envelopes based on COSE and JOSE
+   *  Security envelopes based on CBOR Object Signing and Encryption
+      (COSE) and Javascript Object Signing and Encryption (JOSE)
 
    *  Nesting of claims sets and tokens to represent complex and
       compound devices
@@ -408,8 +411,8 @@ Table of Contents
    verifier will put claims in the attestation results that give details
    about the entity that it has computed or looked up in a database.
    For example, the verifier may be able to put an "oemid" claim in the
-   attestation results by performing a look up based on a UEID (serial
-   number) it received in evidence.
+   attestation results by performing a look up based on a "ueid" claim
+   (e.g., serial number) it received in evidence.
 
    This specification does not establish any normative rules for the
    verifier to follow, as these are a matter of local policy.  It is up
@@ -726,15 +729,15 @@ Table of Contents
    |      |      | is only one UEID for an entity) [IEEE.802-2001],    |
    |      |      | [OUI.Guide].                                        |
    +------+------+-----------------------------------------------------+
-   | 0x03 | IMEI | This is a 14-digit identifier consisting of an      |
-   |      |      | 8-digit Type Allocation Code and a 6-digit serial   |
-   |      |      | number allocated by the manufacturer, which SHALL   |
-   |      |      | be encoded as byte string of length 14 with each    |
-   |      |      | byte as the digit's value (not the ASCII encoding   |
-   |      |      | of the digit; the digit 3 encodes as 0x03, not      |
-   |      |      | 0x33).  The IMEI value encoded SHALL NOT include    |
-   |      |      | Luhn checksum or SVN information.  See              |
-   |      |      | [ThreeGPP.IMEI].                                    |
+   | 0x03 | IMEI | (International Mobile Equipment Identity) This is   |
+   |      |      | a 14-digit identifier consisting of an 8-digit      |
+   |      |      | Type Allocation Code and a 6-digit serial number    |
+   |      |      | allocated by the manufacturer, which SHALL be       |
+   |      |      | encoded as byte string of length 14 with each byte  |
+   |      |      | as the digit's value (not the ASCII encoding of     |
+   |      |      | the digit; the digit 3 encodes as 0x03, not 0x33).  |
+   |      |      | The IMEI value encoded SHALL NOT include Luhn       |
+   |      |      | checksum or SVN information.  See [ThreeGPP.IMEI].  |
    +------+------+-----------------------------------------------------+
 
                       Table 1: UEID Composition Types
@@ -954,11 +957,13 @@ Table of Contents
 
 4.2.7.  swversion (Software Version) Claim
 
-   The "swversion" claim makes use of the CoSWID version-scheme item to
-   give a simple version for the software.  A full CoSWID manifest or
-   other type of manifest can be instead if this is too simple.  A
-   "swversion" claim MUST only be present if a "swname" claim described
-   in Section 4.2.6 is present.
+   The "swversion" claim makes use of the CoSWID version-scheme defined
+   in [CoSWID] to give a simple version for the software.  A "swversion"
+   claim MUST only be present if a "swname" claim described in
+   Section 4.2.6 is present.
+
+   The "manifests" claim Section 4.2.15 may be instead if this is too
+   simple.
 
    $$Claims-Set-Claims //= (sw-version-label => sw-version-type)
 
@@ -976,8 +981,9 @@ Table of Contents
    of the OEM and may not be replaced by the end user or even the
    enterprise that owns the device.  The means of control may be by
    cryptographic authentication of the software, by the software being
-   in ROM, a combination of the two or other.  If this claim is present
-   the "oemid" claim SHOULD always also be present.
+   in Read-Only Memory (ROM), a combination of the two or other.  If
+   this claim is present the "oemid" claim SHOULD always also be
+   present.
 
    $$Claims-Set-Claims //= (oem-boot-label => bool)
 
@@ -1171,15 +1177,16 @@ Table of Contents
    received all of the certifications.
 
    DLOA documents are always fetched from a registrar that stores them.
-   This claim contains several data items used to construct a URL for
-   fetching the DLOA from the particular registrar.
+   This claim contains several data items used to construct a Uniform
+   Resource Locator (URL) for fetching the DLOA from the particular
+   registrar.
 
    This claim MUST be encoded as an array with either two or three
-   elements.  The first element MUST be the URI for the registrar.  The
+   elements.  The first element MUST be the URL for the registrar.  The
    second element MUST be a platform label indicating which platform was
    certified.  If the DLOA applies to an application, then the third
    element is added which MUST be an application label.  The method of
-   constructing the registrar URI, platform label and possibly
+   constructing the registrar URL, platform label and possibly
    application label is specified in [DLOA].
 
    The retriever of a DLOA MUST follow the recommendation in [DLOA] and
@@ -1219,9 +1226,10 @@ Table of Contents
 
    This claim allows multiple formats for the manifest.  For example,
    the manifest may be a CBOR-encoded CoSWID, an XML-encoded SWID or
-   other.  Identification of the type of manifest is always by a CoAP
-   Content-Format integer [RFC7252].  If there is no CoAP identifier
-   registered for the manifest format, one MUST be registered.
+   other.  Identification of the type of manifest is always by a
+   Constrained Application Protocol (CoAP) Content-Format integer
+   [RFC7252].  If there is no CoAP identifier registered for the
+   manifest format, one MUST be registered.
 
    This claim MUST be an array of one or more manifests.  Each manifest
    in the claim MUST be an array of two.  The first item in the array of
@@ -1242,7 +1250,8 @@ Table of Contents
    A CoSWID manifest MUST be a payload CoSWID, not an evidence CoSWID.
    These are defined in [CoSWID].
 
-   A [SUIT.Manifest] may be used as a manifest.
+   A Software Updates for Internet of Things (SUIT) Manifest
+   [SUIT.Manifest] may be used.
 
    This claim is extensible for use of manifest formats beyond those
    mentioned in this document.  No particular manifest format is
@@ -1632,13 +1641,13 @@ Table of Contents
 
    See Section 6 for the detailed description of an EAT profile.
 
-   The "eat_profile" claim identifies an EAT profile by either a URL or
-   an OID.  Typically, the URI will reference a document describing the
-   profile.  An OID is just a unique identifier for the profile.  It may
-   exist anywhere in the OID tree.  There is no requirement that the
-   named document be publicly accessible.  The primary purpose of the
-   "eat_profile" claim is to uniquely identify the profile even if it is
-   a private profile.
+   The "eat_profile" claim identifies an EAT profile by either a Uniform
+   Resource Identifier (URI) or an Object Identifier (OID).  Typically,
+   the URI will reference a document describing the profile.  An OID is
+   just a unique identifier for the profile.  It may exist anywhere in
+   the OID tree.  There is no requirement that the named document be
+   publicly accessible.  The primary purpose of the "eat_profile" claim
+   is to uniquely identify the profile even if it is a private profile.
 
    The OID is always absolute and never relative.
 
@@ -1980,11 +1989,11 @@ Table of Contents
    Some claims are "pluggable" in that they allow different formats for
    their content.  The "manifests" claim (Section 4.2.15) along with the
    measurement and "measurements" (Section 4.2.16) claims are examples
-   of this, allowing the use of CoSWID, TEEP Manifests and other
-   formats.  A profile should specify which formats are allowed to be
-   sent, with the assumption that the corresponding COAP content types
-   have been registered.  A profile should require the receiver to
-   accept all formats that are allowed to be sent.
+   of this, allowing the use of CoSWID, SUIT Manifest and other formats.
+   A profile should specify which formats are allowed to be sent, with
+   the assumption that the corresponding CoAP content types have been
+   registered.  A profile should require the receiver to accept all
+   formats that are allowed to be sent.
 
    Further, if there is variation within a format that is allowed, the
    profile should specify which variations can be sent.  For example,
@@ -3199,9 +3208,9 @@ Table of Contents
               O. Rønningstad, "A Concise Binary Object Representation
               (CBOR)-based Serialization Format for the Software Updates
               for Internet of Things (SUIT) Manifest", Work in Progress,
-              Internet-Draft, draft-ietf-suit-manifest-22, 27 February
+              Internet-Draft, draft-ietf-suit-manifest-23, 10 September
               2023, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              suit-manifest-22>.
+              suit-manifest-23>.
 
    [ThreeGPP.IMEI]
               3GPP, "3rd Generation Partnership Project; Technical
@@ -3466,8 +3475,9 @@ A.1.4.  Key / Key Store Attestation
    / This is an attestation of a public key and the key store     /
    / implementation that protects and manages it. The key store   /
    / implementation is in a security-oriented execution           /
-   / environment separate from the high-level OS, for example a   /
-   / TEE. The key store is the Attester.                          /
+   / environment separate from the high-level OS (HLOS), for      /
+   / example a Trusted Execution Environment (TEE). The key store /
+   / is the Attester.                                             /
    /                                                              /
    / There is some attestation of the high-level OS, just version /
    / and boot & debug status. It is a Claims-Set submodule because/
@@ -3727,7 +3737,7 @@ A.2.  Signed Token Examples
 
 A.2.1.  Basic CWT Example
 
-   This is a simple ECDSA signed CWT-format token.
+   This is a simple CWT-format token signed with the ECDSA algorithm.
 
    / This is a full CWT-format token with a very simple payloal. /
    / The main structure visible here is that of the COSE_Sign1.  /
@@ -3982,8 +3992,8 @@ B.1.  Collision Probability
 
 B.2.  No Use of UUID
 
-   A UEID is not a UUID [RFC4122] by conscious choice for the following
-   reasons.
+   A UEID is not a Universally Unique Identifier (UUID) [RFC4122] by
+   conscious choice for the following reasons.
 
    UUIDs are limited to 128 bits which may not be enough for some future
    use cases.
@@ -4341,9 +4351,9 @@ F.1.1.  COSE/JWS Key ID
 
    COSE leaves the semantics of the key ID open-ended.  It could be a
    record locator in a database, a hash of a public key, an input to a
-   KDF, an authority key identifier (AKI) for an X.509 certificate or
-   other.  The profile document should specify what the key ID's
-   semantics are.
+   Key Derivation Function (KDF), an Authority Key Identifier (AKI) for
+   an X.509 certificate or other.  The profile document should specify
+   what the key ID's semantics are.
 
 F.1.2.  JWS and COSE X.509 Header Parameters
 
