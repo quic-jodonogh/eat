@@ -53,7 +53,7 @@
         <email>carl@redhoundsoftware.com</email>
       </address>
     </author>
-    <date year="2023" month="September" day="07"/>
+    <date year="2023" month="September" day="17"/>
     <area>Security</area>
     <workgroup>RATS</workgroup>
     <keyword>signing attestation cbor</keyword>
@@ -2583,8 +2583,7 @@ specification reference.</t>
               <organization>Arm Limited</organization>
             </author>
             <author fullname="Hannes Tschofenig" initials="H." surname="Tschofenig">
-              <organization>Arm Limited</organization>
-            </author>
+         </author>
             <author fullname="Henk Birkholz" initials="H." surname="Birkholz">
               <organization>Fraunhofer SIT</organization>
             </author>
@@ -2594,21 +2593,20 @@ specification reference.</t>
             <author fullname="Øyvind Rønningstad" initials="O." surname="Rønningstad">
               <organization>Nordic Semiconductor</organization>
             </author>
-            <date day="27" month="February" year="2023"/>
+            <date day="10" month="September" year="2023"/>
             <abstract>
               <t>   This specification describes the format of a manifest.  A manifest is
    a bundle of metadata about code/data obtained by a recipient (chiefly
-   the firmware for an IoT device), where to find the that code/data,
-   the devices to which it applies, and cryptographic information
-   protecting the manifest.  Software updates and Trusted Invocation
-   both tend to use sequences of common operations, so the manifest
-   encodes those sequences of operations, rather than declaring the
-   metadata.
+   the firmware for an IoT device), where to find the code/data, the
+   devices to which it applies, and cryptographic information protecting
+   the manifest.  Software updates and Trusted Invocation both tend to
+   use sequences of common operations, so the manifest encodes those
+   sequences of operations, rather than declaring the metadata.
 
               </t>
             </abstract>
           </front>
-          <seriesInfo name="Internet-Draft" value="draft-ietf-suit-manifest-22"/>
+          <seriesInfo name="Internet-Draft" value="draft-ietf-suit-manifest-23"/>
         </reference>
         <reference anchor="RFC2119">
           <front>
@@ -3863,6 +3861,7 @@ differences. A comprehensive history is available via the IETF Datatracker's rec
           <li>Abstract wording improvement</li>
           <li>IETF is change controller rather than IESG for IANA registrations</li>
           <li>Change "Indicate" to "Indcates"</li>
+          <li>Refer to RFC 9334 instead of RATS.Arch and make ref normative</li>
         </ul>
       </section>
     </section>
@@ -4983,8 +4982,9 @@ cV5XYSWRFcKCUM2lU4WeeXFU46nIEydnBDd/vvLUg0BwpAM6y8vkUkxY0B1M
 lJRMG0OKOJIUfXx8fkLG2NUyHr9Plg9ylcNVbmw4fydVkYGge9TDwKv7g8mE
 AWA4f5VgjeDjk/QjH0rQi/FvOMSuC3judxpBIwiZyPYEeGRJSbiLVV5R9yV1
 Ml7XcyQG1Gv2cARAhhzkDpOgHWOrLc4Avqb5oprFAdiUuZwh8fswEYNQd3p8
-9pgWgOrTiOdfgDPqQnH+3ul8Qox2D+eKfxHX3fO8er3OLaejNSy9uE2w5fcm
-r9eSlPMkQxbj4voCR2/8G55uwyPvfwO/JnzTE2gCAA==
+9pgWgOrTiOdfgDPqQnH+3ul8Qox2D+eKfxHXxUG8QrGKnyKhoUXA5NcC1aDh
+oIGGA3MSUQzbABqvXq/zwNLRGnZOvC44sPcmLdhSpPMkIx7j3viCZm/cI57u
+4iPvfwMt1zs/UmgCAA==
 
 -->
 

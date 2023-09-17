@@ -5,11 +5,11 @@
 RATS                                                        L. Lundblade
 Internet-Draft                                       Security Theory LLC
 Intended status: Standards Track                              G. Mandyam
-Expires: 10 March 2024                                     J. O'Donoghue
+Expires: 20 March 2024                                     J. O'Donoghue
                                               Qualcomm Technologies Inc.
                                                               C. Wallace
                                                 Red Hound Software, Inc.
-                                                        7 September 2023
+                                                       17 September 2023
 
 
                    The Entity Attestation Token (EAT)
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 March 2024.
+   This Internet-Draft will expire on 20 March 2024.
 
 Copyright Notice
 
@@ -3202,9 +3202,9 @@ Table of Contents
               O. Rønningstad, "A Concise Binary Object Representation
               (CBOR)-based Serialization Format for the Software Updates
               for Internet of Things (SUIT) Manifest", Work in Progress,
-              Internet-Draft, draft-ietf-suit-manifest-22, 27 February
+              Internet-Draft, draft-ietf-suit-manifest-23, 10 September
               2023, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              suit-manifest-22>.
+              suit-manifest-23>.
 
    [ThreeGPP.IMEI]
               3GPP, "3rd Generation Partnership Project; Technical
@@ -4400,6 +4400,8 @@ G.1.  From draft-ietf-rats-eat-21
    *  IETF is change controller rather than IESG for IANA registrations
 
    *  Change "Indicate" to "Indcates"
+
+   *  Refer to RFC 9334 instead of RATS.Arch and make ref normative
 
 Contributors
 
