@@ -1143,9 +1143,8 @@ Table of Contents
 
 4.2.11.  uptime (Uptime) Claim
 
-   The "uptime" claim MUST contain a value that represents the number of
-   seconds that have elapsed since the entity or submodule was last
-   booted.
+   The "uptime" claim contains the number of seconds that have elapsed
+   since the entity or submodule was last booted.
 
    $$Claims-Set-Claims //= (uptime-label => uint)
 
@@ -2057,7 +2056,7 @@ Table of Contents
        | Endorsements   | This profile contains no endorsement    |
        |                | identifier                              |
        +----------------+-----------------------------------------+
-       | Nonce          | A new single unique nonce MUST be used  |
+       | Freshness      | A new single unique nonce MUST be used  |
        |                | for every token request                 |
        +----------------+-----------------------------------------+
        | Claims         | No requirement is made on the presence  |
