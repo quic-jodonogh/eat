@@ -2292,7 +2292,7 @@ sw-version-type = [
 <p id="section-4.2.8-1">An "oemboot" claim with value of true indicates the entity booted with software authorized by the manufacturer of the entity as indicated by the "oemid" claim described in <a href="#oemid" class="xref">Section 4.2.3</a>.
 It indicates the firmware and operating system are fully under control of the OEM and may not be replaced by the end user or even the enterprise that owns the device.
 The means of control may be by cryptographic authentication of the software, by the software being in Read-Only Memory (ROM), a combination of the two or other.
-If this claim is present the "oemid" claim <span class="bcp14">SHOULD</span> always also be present.<a href="#section-4.2.8-1" class="pilcrow">¶</a></p>
+If this claim is present the "oemid" claim <span class="bcp14">MUST</span> be present.<a href="#section-4.2.8-1" class="pilcrow">¶</a></p>
 <div id="section-4.2.8-2">
 <pre class="lang-CDDL sourcecode">
 $$Claims-Set-Claims //= (oem-boot-label =&gt; bool)
@@ -2380,7 +2380,8 @@ have been so since the entity booted/started.<a href="#section-4.2.9.3-1" class=
 disabled such that no end user or developer can enable them. Only
 the manufacturer indicated in the "oemid" claim can enable them. This
 also indicates that all debug facilities are currently disabled and
-have been so since boot/start.<a href="#section-4.2.9.4-1" class="pilcrow">¶</a></p>
+have been so since boot/start.
+If this debug state is reported, the "oemid" claim  <span class="bcp14">MUST</span> be present.<a href="#section-4.2.9.4-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="disabled-fully-and-permanently">
@@ -5855,6 +5856,8 @@ differences. A comprehensive history is available via the IETF Datatracker's rec
           <li class="normal" id="appendix-G.1-1.5">IETF is change controller rather than IESG for IANA registrations<a href="#appendix-G.1-1.5" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="appendix-G.1-1.6">Change "Indicate" to "Indcates"<a href="#appendix-G.1-1.6" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="appendix-G.1-1.7">Require "oemid" claim for "oemboot" claim and debug state of permanently disabled.<a href="#appendix-G.1-1.7" class="pilcrow">¶</a>
 </li>
         </ul>
 </section>

@@ -982,8 +982,7 @@ Table of Contents
    enterprise that owns the device.  The means of control may be by
    cryptographic authentication of the software, by the software being
    in Read-Only Memory (ROM), a combination of the two or other.  If
-   this claim is present the "oemid" claim SHOULD always also be
-   present.
+   this claim is present the "oemid" claim MUST be present.
 
    $$Claims-Set-Claims //= (oem-boot-label => bool)
 
@@ -1061,7 +1060,8 @@ Table of Contents
    disabled such that no end user or developer can enable them.  Only
    the manufacturer indicated in the "oemid" claim can enable them.
    This also indicates that all debug facilities are currently disabled
-   and have been so since boot/start.
+   and have been so since boot/start.  If this debug state is reported,
+   the "oemid" claim MUST be present.
 
 4.2.9.5.  Disabled Fully and Permanently
 
@@ -4415,6 +4415,9 @@ G.1.  From draft-ietf-rats-eat-21
    *  IETF is change controller rather than IESG for IANA registrations
 
    *  Change "Indicate" to "Indcates"
+
+   *  Require "oemid" claim for "oemboot" claim and debug state of
+      permanently disabled.
 
 Contributors
 
