@@ -1062,7 +1062,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Lundblade, et al.</td>
-<td class="center">Expires 10 March 2024</td>
+<td class="center">Expires 20 March 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1075,12 +1075,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-rats-eat-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2023-09-07" class="published">7 September 2023</time>
+<time datetime="2023-09-17" class="published">17 September 2023</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-03-10">10 March 2024</time></dd>
+<dd class="expires"><time datetime="2024-03-20">20 March 2024</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1131,7 +1131,7 @@ claims.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 10 March 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 20 March 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1212,13 +1212,13 @@ claims.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
                     <p id="section-toc.1-1.4.2.2.2.3.1"><a href="#section-4.2.3" class="xref">4.2.3</a>.  <a href="#name-oemid-hardware-oem-identifi" class="xref">oemid (Hardware OEM Identification) Claim</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2.2.3.2.1">
-                        <p id="section-toc.1-1.4.2.2.2.3.2.1.1"><a href="#section-4.2.3.1" class="xref">4.2.3.1</a>.  <a href="#name-random-number-based-oemid" class="xref">Random Number Based OEMID</a></p>
+                        <p id="section-toc.1-1.4.2.2.2.3.2.1.1"><a href="#section-4.2.3.1" class="xref">4.2.3.1</a>.  <a href="#name-random-number-based-oem-id" class="xref">Random Number Based OEM ID</a></p>
 </li>
                       <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2.2.3.2.2">
-                        <p id="section-toc.1-1.4.2.2.2.3.2.2.1"><a href="#section-4.2.3.2" class="xref">4.2.3.2</a>.  <a href="#name-ieee-based-oemid" class="xref">IEEE Based OEMID</a></p>
+                        <p id="section-toc.1-1.4.2.2.2.3.2.2.1"><a href="#section-4.2.3.2" class="xref">4.2.3.2</a>.  <a href="#name-ieee-based-oem-id" class="xref">IEEE Based OEM ID</a></p>
 </li>
                       <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2.2.3.2.3">
-                        <p id="section-toc.1-1.4.2.2.2.3.2.3.1"><a href="#section-4.2.3.3" class="xref">4.2.3.3</a>.  <a href="#name-iana-private-enterprise-num" class="xref">IANA Private Enterprise Number Based OEMID</a></p>
+                        <p id="section-toc.1-1.4.2.2.2.3.2.3.1"><a href="#section-4.2.3.3" class="xref">4.2.3.3</a>.  <a href="#name-iana-private-enterprise-num" class="xref">IANA Private Enterprise Number Based OEM ID</a></p>
 </li>
                     </ul>
 </li>
@@ -1643,7 +1643,7 @@ Here are some examples:<a href="#section-1-3" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-1-4.4">Configuration and state of a device<a href="#section-1-4.4" class="pilcrow">¶</a>
 </li>
-        <li class="normal" id="section-1-4.5">Environmental characteristics of a device like its GPS location<a href="#section-1-4.5" class="pilcrow">¶</a>
+        <li class="normal" id="section-1-4.5">Environmental characteristics of a device like its Global Positioning Sytem (GPS) location<a href="#section-1-4.5" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="section-1-4.6">Formal certifications received<a href="#section-1-4.6" class="pilcrow">¶</a>
 </li>
@@ -1657,7 +1657,7 @@ It is responsible for protecting the attestation key.
 Some EAT implementations will use components with very high resistance to attack like TPMs or secure elements.
 Others may rely solely on simple software defenses.<a href="#section-1-7" class="pilcrow">¶</a></p>
 <p id="section-1-8">Nesting of tokens and claims sets is accommodated for composite devices that have multiple subsystems.<a href="#section-1-8" class="pilcrow">¶</a></p>
-<p id="section-1-9">An EAT may be encoded in either JSON <span>[<a href="#RFC8259" class="xref">RFC8259</a>]</span> or CBOR <span>[<a href="#RFC8949" class="xref">RFC8949</a>]</span> as needed for each use case.
+<p id="section-1-9">An EAT may be encoded in either JavaScript Object Notation (JSON) <span>[<a href="#RFC8259" class="xref">RFC8259</a>]</span> or Concise Binary Object Representation (CBOR) <span>[<a href="#RFC8949" class="xref">RFC8949</a>]</span> as needed for each use case.
 EAT is built on CBOR Web Token (CWT) <span>[<a href="#RFC8392" class="xref">RFC8392</a>]</span> and JSON Web Token (JWT) <span>[<a href="#RFC7519" class="xref">RFC7519</a>]</span> and inherits all their characteristics and their security mechanisms.
 Like CWT and JWT, EAT does not imply any message flow.<a href="#section-1-9" class="pilcrow">¶</a></p>
 <div id="entity-overview">
@@ -1678,13 +1678,13 @@ The hardware and software that implement a web site server or service may be an 
 <ul class="normal">
 <li class="normal" id="section-1.1-6.1">A Secure Element<a href="#section-1.1-6.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-1.1-6.2">A TEE<a href="#section-1.1-6.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-1.1-6.2">A Trusted Execution Environment (TEE)<a href="#section-1.1-6.2" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-1.1-6.3">A network card in a router<a href="#section-1.1-6.3" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-1.1-6.4">A router, perhaps with each network card in the router a submodule<a href="#section-1.1-6.4" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-1.1-6.5">An IoT device<a href="#section-1.1-6.5" class="pilcrow">¶</a>
+          <li class="normal" id="section-1.1-6.5">An Internet of Things (IoT) device<a href="#section-1.1-6.5" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-1.1-6.6">An individual process<a href="#section-1.1-6.6" class="pilcrow">¶</a>
 </li>
@@ -1714,7 +1714,7 @@ While EAT is based on and compatible with CWT and JWT, it can also be described 
 </li>
           <li class="normal" id="section-1.2-2.3">Claims defined in CDDL and serialized using CBOR or JSON<a href="#section-1.2-2.3" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-1.2-2.4">Security envelopes based on COSE and JOSE<a href="#section-1.2-2.4" class="pilcrow">¶</a>
+          <li class="normal" id="section-1.2-2.4">Security envelopes based on CBOR Object Signing and Encryption (COSE) and Javascript Object Signing and Encryption (JOSE)<a href="#section-1.2-2.4" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-1.2-2.5">Nesting of claims sets and tokens to represent complex and compound devices<a href="#section-1.2-2.5" class="pilcrow">¶</a>
 </li>
@@ -1763,7 +1763,7 @@ For example, measurements in evidence may be compared to reference values the re
 This forwarding is subject to the verifier's implementation and policy.
 The relying party should be aware of the verifier's policy to know what checks it has performed on claims it forwards.<a href="#section-1.3.1-3" class="pilcrow">¶</a></p>
 <p id="section-1.3.1-4">The verifier may modify claims it forwards, for example, to implement a privacy preservation functionality. It is also possible the verifier will put claims in the attestation results that give details about the entity that it has computed or looked up in a database.
-For example, the verifier may be able to put an "oemid" claim in the attestation results by performing a look up based on a UEID (serial number) it received in evidence.<a href="#section-1.3.1-4" class="pilcrow">¶</a></p>
+For example, the verifier may be able to put an "oemid" claim in the attestation results by performing a look up based on a "ueid" claim (e.g., serial number) it received in evidence.<a href="#section-1.3.1-4" class="pilcrow">¶</a></p>
 <p id="section-1.3.1-5">This specification does not establish any normative rules for the verifier to follow, as these are a matter of local policy.
 It is up to each relying party to understand the processing rules of each verifier to know how to interpret claims in attestation results.<a href="#section-1.3.1-5" class="pilcrow">¶</a></p>
 </section>
@@ -2048,7 +2048,7 @@ They <span class="bcp14">MAY</span> also change from one type to another for a g
                 <tr>
                   <td class="text-left" rowspan="1" colspan="1">0x03</td>
                   <td class="text-left" rowspan="1" colspan="1">IMEI</td>
-                  <td class="text-left" rowspan="1" colspan="1">This is a 14-digit identifier consisting of an 8-digit Type Allocation Code and a 6-digit serial number allocated by the manufacturer, which <span class="bcp14">SHALL</span> be encoded as byte string of length 14 with each byte as the digit's value (not the ASCII encoding of the digit; the digit 3 encodes as 0x03, not 0x33). The IMEI value encoded <span class="bcp14">SHALL NOT</span> include Luhn checksum or SVN information. See <span>[<a href="#ThreeGPP.IMEI" class="xref">ThreeGPP.IMEI</a>]</span>.</td>
+                  <td class="text-left" rowspan="1" colspan="1">(International Mobile Equipment Identity) This is a 14-digit identifier consisting of an 8-digit Type Allocation Code and a 6-digit serial number allocated by the manufacturer, which <span class="bcp14">SHALL</span> be encoded as byte string of length 14 with each byte as the digit's value (not the ASCII encoding of the digit; the digit 3 encodes as 0x03, not 0x33). The IMEI value encoded <span class="bcp14">SHALL NOT</span> include Luhn checksum or SVN information. See <span>[<a href="#ThreeGPP.IMEI" class="xref">ThreeGPP.IMEI</a>]</span>.</td>
                 </tr>
               </tbody>
             </table>
@@ -2126,12 +2126,12 @@ The receiver of this claim <span class="bcp14">MUST</span> be able to handle all
 Depending on the situation and use case newly manfactured devices may continue to use the old OEM ID or switch to a new one.
 This is left to the discretion of the manufacturers, but they should consider how it affects the above-mentioned claims and the attestation eco-system for their devices.
 The considerations are the same for all three forms of this claim.<a href="#section-4.2.3-3" class="pilcrow">¶</a></p>
-<div id="random-number-based-oemid">
+<div id="random-number-based-oem-id">
 <section id="section-4.2.3.1">
-            <h5 id="name-random-number-based-oemid">
-<a href="#section-4.2.3.1" class="section-number selfRef">4.2.3.1. </a><a href="#name-random-number-based-oemid" class="section-name selfRef">Random Number Based OEMID</a>
+            <h5 id="name-random-number-based-oem-id">
+<a href="#section-4.2.3.1" class="section-number selfRef">4.2.3.1. </a><a href="#name-random-number-based-oem-id" class="section-name selfRef">Random Number Based OEM ID</a>
             </h5>
-<p id="section-4.2.3.1-1">The random number based OEMID <span class="bcp14">MUST</span> always be 16 bytes (128 bits) long.<a href="#section-4.2.3.1-1" class="pilcrow">¶</a></p>
+<p id="section-4.2.3.1-1">The random number based OEM ID <span class="bcp14">MUST</span> always be 16 bytes (128 bits) long.<a href="#section-4.2.3.1-1" class="pilcrow">¶</a></p>
 <p id="section-4.2.3.1-2">The OEM may create their own ID by using a cryptographic-quality random number generator.
 They would perform this only once in the life of the company to generate the single ID for said company.
 They would use that same ID in every entity they make.
@@ -2139,10 +2139,10 @@ This uniquely identifies the OEM on a statistical basis and is large enough shou
 <p id="section-4.2.3.1-3">In JSON-encoded tokens this <span class="bcp14">MUST</span> be base64url-encoded.<a href="#section-4.2.3.1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="ieee-based-oemid">
+<div id="ieee-based-oem-id">
 <section id="section-4.2.3.2">
-            <h5 id="name-ieee-based-oemid">
-<a href="#section-4.2.3.2" class="section-number selfRef">4.2.3.2. </a><a href="#name-ieee-based-oemid" class="section-name selfRef">IEEE Based OEMID</a>
+            <h5 id="name-ieee-based-oem-id">
+<a href="#section-4.2.3.2" class="section-number selfRef">4.2.3.2. </a><a href="#name-ieee-based-oem-id" class="section-name selfRef">IEEE Based OEM ID</a>
             </h5>
 <p id="section-4.2.3.2-1">The IEEE operates a global registry for MAC addresses and company IDs.
 This claim uses that database to identify OEMs. The contents of the
@@ -2166,10 +2166,10 @@ be encoded in 3 bytes with values 0xAC, 0xDE, 0x48.<a href="#section-4.2.3.2-3" 
 <p id="section-4.2.3.2-5">In JSON-encoded tokens, this <span class="bcp14">MUST</span> be base64url-encoded and always 4 bytes.<a href="#section-4.2.3.2-5" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="iana-private-enterprise-number-based-oemid">
+<div id="iana-private-enterprise-number-based-oem-id">
 <section id="section-4.2.3.3">
             <h5 id="name-iana-private-enterprise-num">
-<a href="#section-4.2.3.3" class="section-number selfRef">4.2.3.3. </a><a href="#name-iana-private-enterprise-num" class="section-name selfRef">IANA Private Enterprise Number Based OEMID</a>
+<a href="#section-4.2.3.3" class="section-number selfRef">4.2.3.3. </a><a href="#name-iana-private-enterprise-num" class="section-name selfRef">IANA Private Enterprise Number Based OEM ID</a>
             </h5>
 <p id="section-4.2.3.3-1">IANA maintains a registry for Private Enterprise Numbers (PEN) <span>[<a href="#PEN" class="xref">PEN</a>]</span>. A PEN is an integer that identifies an enterprise and may be
 used to construct an object identifier (OID) relative to the following OID arc that is managed by IANA:  iso(1) identified-organization(3) dod(6) internet(1) private(4) enterprise(1).<a href="#section-4.2.3.3-1" class="pilcrow">¶</a></p>
@@ -2274,10 +2274,10 @@ $$Claims-Set-Claims //= ( sw-name-label =&gt; tstr )
           <h4 id="name-swversion-software-version-">
 <a href="#section-4.2.7" class="section-number selfRef">4.2.7. </a><a href="#name-swversion-software-version-" class="section-name selfRef">swversion (Software Version) Claim</a>
           </h4>
-<p id="section-4.2.7-1">The "swversion" claim makes use of the CoSWID version-scheme item to give a simple version for the software.
-A full CoSWID manifest or other type of manifest can be instead if this is too simple.
+<p id="section-4.2.7-1">The "swversion" claim makes use of the CoSWID version-scheme defined in <span>[<a href="#CoSWID" class="xref">CoSWID</a>]</span> to give a simple version for the software.
 A "swversion" claim <span class="bcp14">MUST</span> only be present if a "swname" claim described in <a href="#swname" class="xref">Section 4.2.6</a> is present.<a href="#section-4.2.7-1" class="pilcrow">¶</a></p>
-<div id="section-4.2.7-2">
+<p id="section-4.2.7-2">The "manifests" claim <a href="#manifests" class="xref">Section 4.2.15</a> may be instead if this is too simple.<a href="#section-4.2.7-2" class="pilcrow">¶</a></p>
+<div id="section-4.2.7-3">
 <pre class="lang-CDDL sourcecode">
 $$Claims-Set-Claims //= (sw-version-label =&gt; sw-version-type)
 
@@ -2285,7 +2285,7 @@ sw-version-type = [
     version:  tstr
     ? scheme:  $version-scheme
 ]
-</pre><a href="#section-4.2.7-2" class="pilcrow">¶</a>
+</pre><a href="#section-4.2.7-3" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
@@ -2296,8 +2296,8 @@ sw-version-type = [
           </h4>
 <p id="section-4.2.8-1">An "oemboot" claim with value of true indicates the entity booted with software authorized by the manufacturer of the entity as indicated by the "oemid" claim described in <a href="#oemid" class="xref">Section 4.2.3</a>.
 It indicates the firmware and operating system are fully under control of the OEM and may not be replaced by the end user or even the enterprise that owns the device.
-The means of control may be by cryptographic authentication of the software, by the software being in ROM, a combination of the two or other.
-If this claim is present the "oemid" claim <span class="bcp14">SHOULD</span> always also be present.<a href="#section-4.2.8-1" class="pilcrow">¶</a></p>
+The means of control may be by cryptographic authentication of the software, by the software being in Read-Only Memory (ROM), a combination of the two or other.
+If this claim is present the "oemid" claim <span class="bcp14">MUST</span> be present.<a href="#section-4.2.8-1" class="pilcrow">¶</a></p>
 <div id="section-4.2.8-2">
 <pre class="lang-CDDL sourcecode">
 $$Claims-Set-Claims //= (oem-boot-label =&gt; bool)
@@ -2385,7 +2385,8 @@ have been so since the entity booted/started.<a href="#section-4.2.9.3-1" class=
 disabled such that no end user or developer can enable them. Only
 the manufacturer indicated in the "oemid" claim can enable them. This
 also indicates that all debug facilities are currently disabled and
-have been so since boot/start.<a href="#section-4.2.9.4-1" class="pilcrow">¶</a></p>
+have been so since boot/start.
+If this debug state is reported, the "oemid" claim  <span class="bcp14">MUST</span> be present.<a href="#section-4.2.9.4-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="disabled-fully-and-permanently">
@@ -2522,12 +2523,12 @@ Verifiers <span class="bcp14">MUST NOT</span> issue this claim unless the entity
 <p id="section-4.2.14-3">This claim <span class="bcp14">MAY</span> contain more than one DLOA.
 If multiple DLOAs are present, verifiers <span class="bcp14">MUST NOT</span> issue this claim unless the entity has received all of the certifications.<a href="#section-4.2.14-3" class="pilcrow">¶</a></p>
 <p id="section-4.2.14-4">DLOA documents are always fetched from a registrar that stores them.
-This claim contains several data items used to construct a URL for fetching the DLOA from the particular registrar.<a href="#section-4.2.14-4" class="pilcrow">¶</a></p>
+This claim contains several data items used to construct a Uniform Resource Locator (URL) for fetching the DLOA from the particular registrar.<a href="#section-4.2.14-4" class="pilcrow">¶</a></p>
 <p id="section-4.2.14-5">This claim <span class="bcp14">MUST</span> be encoded as an array with either two or three elements.
-The first element <span class="bcp14">MUST</span> be the URI for the registrar.
+The first element <span class="bcp14">MUST</span> be the URL for the registrar.
 The second element <span class="bcp14">MUST</span> be a platform label indicating which platform was certified.
 If the DLOA applies to an application, then the third element is added which <span class="bcp14">MUST</span> be an application label.
-The method of constructing the registrar URI, platform label and possibly application label is specified in <span>[<a href="#DLOA" class="xref">DLOA</a>]</span>.<a href="#section-4.2.14-5" class="pilcrow">¶</a></p>
+The method of constructing the registrar URL, platform label and possibly application label is specified in <span>[<a href="#DLOA" class="xref">DLOA</a>]</span>.<a href="#section-4.2.14-5" class="pilcrow">¶</a></p>
 <p id="section-4.2.14-6">The retriever of a DLOA <span class="bcp14">MUST</span> follow the recommendation in <span>[<a href="#DLOA" class="xref">DLOA</a>]</span> and use TLS or some other means to be sure the DLOA registrar they are accessing is authentic.
 The platform and application labels in the claim indicate the correct DLOA for the entity.<a href="#section-4.2.14-6" class="pilcrow">¶</a></p>
 <div id="section-4.2.14-7">
@@ -2560,7 +2561,7 @@ For example, a CoSWID might be signed independently before it is included in an 
 When signed manifests are put into an EAT, the manufacturer's signature <span class="bcp14">SHOULD</span> be included even though an EAT's signature will also cover the manifest.<a href="#section-4.2.15-2" class="pilcrow">¶</a></p>
 <p id="section-4.2.15-3">This claim allows multiple formats for the manifest.
 For example, the manifest may be a CBOR-encoded CoSWID, an XML-encoded SWID or other.
-Identification of the type of manifest is always by a CoAP Content-Format integer <span>[<a href="#RFC7252" class="xref">RFC7252</a>]</span>.
+Identification of the type of manifest is always by a Constrained Application Protocol (CoAP) Content-Format integer <span>[<a href="#RFC7252" class="xref">RFC7252</a>]</span>.
 If there is no CoAP identifier registered for the manifest format, one <span class="bcp14">MUST</span> be registered.<a href="#section-4.2.15-3" class="pilcrow">¶</a></p>
 <p id="section-4.2.15-4">This claim <span class="bcp14">MUST</span> be an array of one or more manifests.
 Each manifest in the claim <span class="bcp14">MUST</span> be an array of two.
@@ -2573,7 +2574,7 @@ The multiple manifests <span class="bcp14">MAY</span> be of different encodings.
 In some cases EAT submodules may be used instead of the array structure in this claim for multiple manifests.<a href="#section-4.2.15-6" class="pilcrow">¶</a></p>
 <p id="section-4.2.15-7">A CoSWID manifest <span class="bcp14">MUST</span> be a payload CoSWID, not an evidence CoSWID.
 These are defined in <span>[<a href="#CoSWID" class="xref">CoSWID</a>]</span>.<a href="#section-4.2.15-7" class="pilcrow">¶</a></p>
-<p id="section-4.2.15-8">A <span>[<a href="#SUIT.Manifest" class="xref">SUIT.Manifest</a>]</span> may be used as a manifest.<a href="#section-4.2.15-8" class="pilcrow">¶</a></p>
+<p id="section-4.2.15-8">A Software Updates for Internet of Things (SUIT) Manifest <span>[<a href="#SUIT.Manifest" class="xref">SUIT.Manifest</a>]</span> may be used.<a href="#section-4.2.15-8" class="pilcrow">¶</a></p>
 <p id="section-4.2.15-9">This claim is extensible for use of manifest formats beyond those mentioned in this document.
 No particular manifest format is preferred.
 For manifest interoperability, an EAT profile as defined in <a href="#profiles" class="xref">Section 6</a>, should be used to specify which manifest format(s) are allowed.<a href="#section-4.2.15-9" class="pilcrow">¶</a></p>
@@ -2917,7 +2918,7 @@ have precession greater than one second. This is not needed for EAT.<a href="#se
 <a href="#section-4.3.2" class="section-number selfRef">4.3.2. </a><a href="#name-eat_profile-eat-profile-cla" class="section-name selfRef">eat_profile (EAT Profile) Claim</a>
           </h4>
 <p id="section-4.3.2-1">See <a href="#profiles" class="xref">Section 6</a> for the detailed description of an EAT profile.<a href="#section-4.3.2-1" class="pilcrow">¶</a></p>
-<p id="section-4.3.2-2">The "eat_profile" claim identifies an EAT profile by either a URL or an OID.
+<p id="section-4.3.2-2">The "eat_profile" claim identifies an EAT profile by either a Uniform Resource Identifier (URI) or an Object Identifier (OID).
 Typically, the URI will reference a document describing the profile.
 An OID is just a unique identifier for the profile.
 It may exist anywhere in the OID tree.
@@ -3246,8 +3247,8 @@ A profile for a specific use case may specify that specific claims are prohibite
 <p id="section-6.2.12-4">A profile may constrain the definition of claims that are defined in this document or elsewhere.
 For example, a profile may require the EAT nonce be a certain length or the "location" claim always include the altitude.<a href="#section-6.2.12-4" class="pilcrow">¶</a></p>
 <p id="section-6.2.12-5">Some claims are "pluggable" in that they allow different formats for their content.
-The "manifests" claim (<a href="#manifests" class="xref">Section 4.2.15</a>) along with the measurement and "measurements" (<a href="#measurements" class="xref">Section 4.2.16</a>) claims are examples of this, allowing the use of CoSWID, TEEP Manifests and other formats.
-A profile should specify which formats are allowed to be sent, with the assumption that the corresponding COAP content types have been registered.
+The "manifests" claim (<a href="#manifests" class="xref">Section 4.2.15</a>) along with the measurement and "measurements" (<a href="#measurements" class="xref">Section 4.2.16</a>) claims are examples of this, allowing the use of CoSWID, SUIT Manifest and other formats.
+A profile should specify which formats are allowed to be sent, with the assumption that the corresponding CoAP content types have been registered.
 A profile should require the receiver to accept all formats that are allowed to be sent.<a href="#section-6.2.12-5" class="pilcrow">¶</a></p>
 <p id="section-6.2.12-6">Further, if there is variation within a format that is allowed, the profile should specify which variations can be sent.
 For example, there are variations in the CoSWID format.
@@ -4103,7 +4104,7 @@ Claim 262 should be renamed from "secboot" to "oemboot" in the JWT registry and 
         </ul>
 <p id="section-10.2-11"></p>
 <ul class="normal">
-<li class="normal" id="section-10.2-12.1">Claim Name: Hardware OEMID<a href="#section-10.2-12.1" class="pilcrow">¶</a>
+<li class="normal" id="section-10.2-12.1">Claim Name: Hardware OEM ID<a href="#section-10.2-12.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-10.2-12.2">Claim Description: Hardware OEM ID<a href="#section-10.2-12.2" class="pilcrow">¶</a>
 </li>
@@ -4582,7 +4583,7 @@ specification reference.<a href="#section-10.4-1" class="pilcrow">¶</a></p>
 <dd class="break"></dd>
 <dt id="SUIT.Manifest">[SUIT.Manifest]</dt>
         <dd>
-<span class="refAuthor">Moran, B.</span>, <span class="refAuthor">Tschofenig, H.</span>, <span class="refAuthor">Birkholz, H.</span>, <span class="refAuthor">Zandberg, K.</span>, and <span class="refAuthor">O. Rønningstad</span>, <span class="refTitle">"A Concise Binary Object Representation (CBOR)-based Serialization Format for the Software Updates for Internet of Things (SUIT) Manifest"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-suit-manifest-22</span>, <time datetime="2023-02-27" class="refDate">27 February 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-suit-manifest-22">https://datatracker.ietf.org/doc/html/draft-ietf-suit-manifest-22</a>&gt;</span>. </dd>
+<span class="refAuthor">Moran, B.</span>, <span class="refAuthor">Tschofenig, H.</span>, <span class="refAuthor">Birkholz, H.</span>, <span class="refAuthor">Zandberg, K.</span>, and <span class="refAuthor">O. Rønningstad</span>, <span class="refTitle">"A Concise Binary Object Representation (CBOR)-based Serialization Format for the Software Updates for Internet of Things (SUIT) Manifest"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-suit-manifest-23</span>, <time datetime="2023-09-10" class="refDate">10 September 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-suit-manifest-23">https://datatracker.ietf.org/doc/html/draft-ietf-suit-manifest-23</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="ThreeGPP.IMEI">[ThreeGPP.IMEI]</dt>
         <dd>
@@ -4855,8 +4856,9 @@ Some examples of signed tokens are also given.<a href="#appendix-A-1" class="pil
 / This is an attestation of a public key and the key store     /
 / implementation that protects and manages it. The key store   /
 / implementation is in a security-oriented execution           /
-/ environment separate from the high-level OS, for example a   /
-/ TEE. The key store is the Attester.                          /
+/ environment separate from the high-level OS (HLOS), for      /
+/ example a Trusted Execution Environment (TEE). The key store /
+/ is the Attester.                                             /
 /                                                              /
 / There is some attestation of the high-level OS, just version /
 / and boot &amp; debug status. It is a Claims-Set submodule because/
@@ -5148,7 +5150,7 @@ gjw4nFMhLpJUuPXvMPzK1GMjhyJq2vWXg1416XKszwQ"
           <h4 id="name-basic-cwt-example">
 <a href="#appendix-A.2.1" class="section-number selfRef">A.2.1. </a><a href="#name-basic-cwt-example" class="section-name selfRef">Basic CWT Example</a>
           </h4>
-<p id="appendix-A.2.1-1">This is a simple ECDSA signed CWT-format token.<a href="#appendix-A.2.1-1" class="pilcrow">¶</a></p>
+<p id="appendix-A.2.1-1">This is a simple CWT-format token signed with the ECDSA algorithm.<a href="#appendix-A.2.1-1" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-A.2.1-2">
 <pre>
 / This is a full CWT-format token with a very simple payloal. /
@@ -5500,8 +5502,7 @@ implementations be able to receive 256-bit UEIDs.<a href="#appendix-B.1-20" clas
         <h3 id="name-no-use-of-uuid">
 <a href="#appendix-B.2" class="section-number selfRef">B.2. </a><a href="#name-no-use-of-uuid" class="section-name selfRef">No Use of UUID</a>
         </h3>
-<p id="appendix-B.2-1">A UEID is not a UUID <span>[<a href="#RFC4122" class="xref">RFC4122</a>]</span> by conscious choice for the following
-reasons.<a href="#appendix-B.2-1" class="pilcrow">¶</a></p>
+<p id="appendix-B.2-1">A UEID is not a Universally Unique Identifier (UUID) <span>[<a href="#RFC4122" class="xref">RFC4122</a>]</span> by conscious choice for the following reasons.<a href="#appendix-B.2-1" class="pilcrow">¶</a></p>
 <p id="appendix-B.2-2">UUIDs are limited to 128 bits which may not be enough for some future
 use cases.<a href="#appendix-B.2-2" class="pilcrow">¶</a></p>
 <p id="appendix-B.2-3">Today, cryptographic-quality random numbers are available from common
@@ -5798,7 +5799,7 @@ Usually, this will be in the profile document for a particular attestation syste
           </h4>
 <p id="appendix-F.1.1-1">The COSE standard header parameter for Key ID (kid) may be used. See <span>[<a href="#RFC9052" class="xref">RFC9052</a>]</span> and <span>[<a href="#RFC7515" class="xref">RFC7515</a>]</span><a href="#appendix-F.1.1-1" class="pilcrow">¶</a></p>
 <p id="appendix-F.1.1-2">COSE leaves the semantics of the key ID open-ended.
-It could be a record locator in a database, a hash of a public key, an input to a KDF, an authority key identifier (AKI) for an X.509 certificate or other.
+It could be a record locator in a database, a hash of a public key, an input to a Key Derivation Function (KDF), an Authority Key Identifier (AKI) for an X.509 certificate or other.
 The profile document should specify what the key ID's semantics are.<a href="#appendix-F.1.1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -5860,6 +5861,12 @@ differences. A comprehensive history is available via the IETF Datatracker's rec
           <li class="normal" id="appendix-G.1-1.5">IETF is change controller rather than IESG for IANA registrations<a href="#appendix-G.1-1.5" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="appendix-G.1-1.6">Change "Indicate" to "Indcates"<a href="#appendix-G.1-1.6" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="appendix-G.1-1.7">Require "oemid" claim for "oemboot" claim and debug state of permanently disabled.<a href="#appendix-G.1-1.7" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="appendix-G.1-1.8">Clarify what happens to OEM ID when companies merge<a href="#appendix-G.1-1.8" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="appendix-G.1-1.9">"OEMID" -&gt; "OEM ID"<a href="#appendix-G.1-1.9" class="pilcrow">¶</a>
 </li>
         </ul>
 </section>
