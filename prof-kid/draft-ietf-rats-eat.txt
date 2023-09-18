@@ -5,11 +5,11 @@
 RATS                                                        L. Lundblade
 Internet-Draft                                       Security Theory LLC
 Intended status: Standards Track                              G. Mandyam
-Expires: 15 March 2024                                     J. O'Donoghue
+Expires: 21 March 2024                                     J. O'Donoghue
                                               Qualcomm Technologies Inc.
                                                               C. Wallace
                                                 Red Hound Software, Inc.
-                                                       12 September 2023
+                                                       18 September 2023
 
 
                    The Entity Attestation Token (EAT)
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 March 2024.
+   This Internet-Draft will expire on 21 March 2024.
 
 Copyright Notice
 
@@ -2031,7 +2031,7 @@ Table of Contents
      | Key            | used to identify the verification key.  If  |
      | Identification | both are present, the kid takes precedence. |
      |                | (It is assumed the receiver has access to a |
-     |                | database of trusted verification which      |
+     |                | database of trusted verification keys which |
      |                | allows lookup of the verification key ID;   |
      |                | the key format and means of distribution    |
      |                | are beyond the scope of this profile)       |
@@ -4404,6 +4404,9 @@ G.1.  From draft-ietf-rats-eat-21
       it does not understand"
 
    *  Abstract wording improvement
+
+   *  Clarification of source of verification keys for constrained
+      profile
 
    *  IETF is change controller rather than IESG for IANA registrations
 
