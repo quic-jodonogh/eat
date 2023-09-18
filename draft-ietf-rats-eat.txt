@@ -660,7 +660,7 @@ Table of Contents
    distinct between manufacturers).
 
    UEIDs are not designed for direct use by humans (e.g., printing on
-   the case of a device), so no textual representation is defined.
+   the case of a device), so no such representation is defined.
 
    There are privacy considerations for UEIDs.  See Section 8.1.
 
@@ -3091,6 +3091,12 @@ Table of Contents
 
                        Table 3: UEID URN Registration
 
+   ABNF for these two URNs is as follows where b64ueid is the base64url-
+   encoded binary byte-string for the UEID or SUEID:
+
+   body =/ ueidbody
+   ueidbody = %s”ueid:” b64ueid
+
 10.4.  CBOR Tag for Detached EAT Bundle Registered by this Document
 
    In the registry [IANA.cbor-tags], IANA is requested to allocate the
@@ -4412,6 +4418,8 @@ Appendix G.  Changes from Previous Drafts
 G.1.  From draft-ietf-rats-eat-21
 
    *  Add titles to tables
+
+   *  Add ABNF to define format of device ID URN
 
    *  Fix some nits
 
