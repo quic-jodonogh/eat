@@ -2043,12 +2043,12 @@ They <span class="bcp14">MAY</span> also change from one type to another for a g
                 <tr>
                   <td class="text-left" rowspan="1" colspan="1">0x02</td>
                   <td class="text-left" rowspan="1" colspan="1">IEEE EUI</td>
-                  <td class="text-left" rowspan="1" colspan="1">This uses the IEEE company identification registry. An EUI is either an EUI-48, EUI-60 or EUI-64 and made up of an OUI, OUI-36 or a CID, different registered company identifiers, and some unique per-entity identifier. EUIs are often the same as or similar to MAC addresses. This type includes MAC-48, an obsolete name for EUI-48. (Note that while entities with multiple network interfaces may have multiple MAC addresses, there is only one UEID for an entity) <span>[<a href="#IEEE.802-2001" class="xref">IEEE.802-2001</a>]</span>, <span>[<a href="#OUI.Guide" class="xref">OUI.Guide</a>]</span>.</td>
+                  <td class="text-left" rowspan="1" colspan="1">This makes use of the device identification scheme operated by the IEEE. An EUI is either an EUI-48, EUI-60 or EUI-64 and made up of an OUI, OUI-36 or a CID, different registered company identifiers, and some unique per-entity identifier. EUIs are often the same as or similar to MAC addresses. This type includes MAC-48, an obsolete name for EUI-48. (Note that while entities with multiple network interfaces may have multiple MAC addresses, there is only one UEID for an entity) <span>[<a href="#IEEE.802-2001" class="xref">IEEE.802-2001</a>]</span>, <span>[<a href="#OUI.Guide" class="xref">OUI.Guide</a>]</span>.</td>
                 </tr>
                 <tr>
                   <td class="text-left" rowspan="1" colspan="1">0x03</td>
                   <td class="text-left" rowspan="1" colspan="1">IMEI</td>
-                  <td class="text-left" rowspan="1" colspan="1">(International Mobile Equipment Identity) This is a 14-digit identifier consisting of an 8-digit Type Allocation Code and a 6-digit serial number allocated by the manufacturer, which <span class="bcp14">SHALL</span> be encoded as byte string of length 14 with each byte as the digit's value (not the ASCII encoding of the digit; the digit 3 encodes as 0x03, not 0x33). The IMEI value encoded <span class="bcp14">SHALL NOT</span> include Luhn checksum or SVN information. See <span>[<a href="#ThreeGPP.IMEI" class="xref">ThreeGPP.IMEI</a>]</span>.</td>
+                  <td class="text-left" rowspan="1" colspan="1">This makes use of the International Mobile Equipment Identity (IMEI) scheme operated by the GSMA. This is a 14-digit identifier consisting of an 8-digit Type Allocation Code (TAC) and a 6-digit serial number allocated by the manufacturer, which <span class="bcp14">SHALL</span> be encoded as byte string of length 14 with each byte as the digit's value (not the ASCII encoding of the digit; the digit 3 encodes as 0x03, not 0x33). The IMEI value encoded <span class="bcp14">SHALL NOT</span> include Luhn checksum or SVN information. See <span>[<a href="#ThreeGPP.IMEI" class="xref">ThreeGPP.IMEI</a>]</span>.</td>
                 </tr>
               </tbody>
             </table>
@@ -5861,19 +5861,21 @@ differences. A comprehensive history is available via the IETF Datatracker's rec
 </li>
           <li class="normal" id="appendix-G.1-1.6">Change "Indicate" to "Indcates"<a href="#appendix-G.1-1.6" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="appendix-G.1-1.7">Wording improvements for manifests claim<a href="#appendix-G.1-1.7" class="pilcrow">¶</a>
+          <li class="normal" id="appendix-G.1-1.7">Better into wording for type 2 and 3 UEIDs<a href="#appendix-G.1-1.7" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="appendix-G.1-1.8">Wording improvements for detached EAT bundle<a href="#appendix-G.1-1.8" class="pilcrow">¶</a>
+          <li class="normal" id="appendix-G.1-1.8">Wording improvements for manifests claim<a href="#appendix-G.1-1.8" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="appendix-G.1-1.9">Clarify purpose of including manufacturer manifest signatures<a href="#appendix-G.1-1.9" class="pilcrow">¶</a>
+          <li class="normal" id="appendix-G.1-1.9">Wording improvements for detached EAT bundle<a href="#appendix-G.1-1.9" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="appendix-G.1-1.10">Refer to RFC 9334 instead of RATS.Arch and make ref normative<a href="#appendix-G.1-1.10" class="pilcrow">¶</a>
+          <li class="normal" id="appendix-G.1-1.10">Clarify purpose of including manufacturer manifest signatures<a href="#appendix-G.1-1.10" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="appendix-G.1-1.11">Require "oemid" claim for "oemboot" claim and debug state of permanently disabled.<a href="#appendix-G.1-1.11" class="pilcrow">¶</a>
+          <li class="normal" id="appendix-G.1-1.11">Refer to RFC 9334 instead of RATS.Arch and make ref normative<a href="#appendix-G.1-1.11" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="appendix-G.1-1.12">Clarify what happens to OEM ID when companies merge<a href="#appendix-G.1-1.12" class="pilcrow">¶</a>
+          <li class="normal" id="appendix-G.1-1.12">Require "oemid" claim for "oemboot" claim and debug state of permanently disabled.<a href="#appendix-G.1-1.12" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="appendix-G.1-1.13">"OEMID" -&gt; "OEM ID"<a href="#appendix-G.1-1.13" class="pilcrow">¶</a>
+          <li class="normal" id="appendix-G.1-1.13">Clarify what happens to OEM ID when companies merge<a href="#appendix-G.1-1.13" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="appendix-G.1-1.14">"OEMID" -&gt; "OEM ID"<a href="#appendix-G.1-1.14" class="pilcrow">¶</a>
 </li>
         </ul>
 </section>
