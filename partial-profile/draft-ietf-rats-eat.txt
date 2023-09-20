@@ -74,9 +74,9 @@ Table of Contents
          4.2.1.2.  Rules for Consuming UEIDs
        4.2.2.  sueids (Semi-permanent UEIDs) Claim (SUEIDs)
        4.2.3.  oemid (Hardware OEM Identification) Claim
-         4.2.3.1.  Random Number Based OEMID
-         4.2.3.2.  IEEE Based OEMID
-         4.2.3.3.  IANA Private Enterprise Number Based OEMID
+         4.2.3.1.  Random Number Based OEM ID
+         4.2.3.2.  IEEE Based OEM ID
+         4.2.3.3.  IANA Private Enterprise Number Based OEM ID
        4.2.4.  hwmodel (Hardware Model) Claim
        4.2.5.  hwversion (Hardware Version) Claim
        4.2.6.  swname (Software Name) Claim
@@ -215,8 +215,8 @@ Table of Contents
    a user or an operator of a service.  For attestation, the keys are
    associated with specific devices and are configured by device
    manufacturers.  The reader is assumed to be familiar with the goals
-   and security model for attestation as described in
-   [RATS.Architecture] and are not repeated here.
+   and security model for attestation as described in RATS Architecture
+   [RFC9334] and are not repeated here.
 
    This document defines some common claims that are potentially of
    broad use.  EAT additionally allows proprietary claims and for
@@ -231,7 +231,8 @@ Table of Contents
 
    *  Configuration and state of a device
 
-   *  Environmental characteristics of a device like its GPS location
+   *  Environmental characteristics of a device like its Global
+      Positioning Sytem (GPS) location
 
    *  Formal certifications received
 
@@ -255,7 +256,8 @@ Table of Contents
    Nesting of tokens and claims sets is accommodated for composite
    devices that have multiple subsystems.
 
-   An EAT may be encoded in either JSON [RFC8259] or CBOR [RFC8949] as
+   An EAT may be encoded in either JavaScript Object Notation (JSON)
+   [RFC8259] or Concise Binary Object Representation (CBOR) [RFC8949] as
    needed for each use case.  EAT is built on CBOR Web Token (CWT)
    [RFC8392] and JSON Web Token (JWT) [RFC7519] and inherits all their
    characteristics and their security mechanisms.  Like CWT and JWT, EAT
@@ -266,12 +268,12 @@ Table of Contents
    This document uses the term "entity" to refer to the target of an
    EAT.  Most of the claims defined in this document are claims about an
    entity.  An entity is equivalent to a target environment in an
-   attester as defined in [RATS.Architecture].
+   attester as defined in [RFC9334].
 
-   Layered attestation and composite devices, as described in
-   [RATS.Architecture], are supported by a submodule mechanism (see
-   Section 4.2.18).  Submodules allow nesting of EATs and of claims-sets
-   so that such hierarchies can be modeled.
+   Layered attestation and composite devices, as described in [RFC9334],
+   are supported by a submodule mechanism (see Section 4.2.18).
+   Submodules allow nesting of EATs and of claims-sets so that such
+   hierarchies can be modeled.
 
    An entity is the same as a "system component", as defined in the
    Internet Security Glossary [RFC4949].
@@ -288,13 +290,13 @@ Table of Contents
 
    *  A Secure Element
 
-   *  A TEE
+   *  A Trusted Execution Environment (TEE)
 
    *  A network card in a router
 
    *  A router, perhaps with each network card in the router a submodule
 
-   *  An IoT device
+   *  An Internet of Things (IoT) device
 
    *  An individual process
 
@@ -320,7 +322,8 @@ Table of Contents
 
    *  Claims defined in CDDL and serialized using CBOR or JSON
 
-   *  Security envelopes based on COSE and JOSE
+   *  Security envelopes based on CBOR Object Signing and Encryption
+      (COSE) and Javascript Object Signing and Encryption (JOSE)
 
    *  Nesting of claims sets and tokens to represent complex and
       compound devices
@@ -367,9 +370,9 @@ Table of Contents
 
 1.3.  Operating Model and RATS Architecture
 
-   EAT follows the operational model described in Figure 1 in
-   [RATS.Architecture].  To summarize, an attester generates evidence in
-   the form of a claims set describing various characteristics of an
+   EAT follows the operational model described in Figure 1 in RATS
+   Architecture [RFC9334].  To summarize, an attester generates evidence
+   in the form of a claims set describing various characteristics of an
    entity.  Evidence is usually signed by a key that proves the attester
    and the evidence it produces are authentic.  The claims set includes
    a nonce or some other means to assure freshness.
@@ -409,8 +412,8 @@ Table of Contents
    verifier will put claims in the attestation results that give details
    about the entity that it has computed or looked up in a database.
    For example, the verifier may be able to put an "oemid" claim in the
-   attestation results by performing a look up based on a UEID (serial
-   number) it received in evidence.
+   attestation results by performing a look up based on a "ueid" claim
+   (e.g., serial number) it received in evidence.
 
    This specification does not establish any normative rules for the
    verifier to follow, as these are a matter of local policy.  It is up
@@ -457,8 +460,7 @@ Table of Contents
    Claims Set:  The CBOR map or JSON object that contains the claims
       conveyed by the CWT or JWT.
 
-   This document reuses terminology from RATS Architecure
-   [RATS.Architecture]:
+   This document reuses terminology from RATS Architecure [RFC9334]:
 
    Attester:  A role performed by an entity (typically a device) whose
       evidence must be appraised in order to infer the extent to which
@@ -659,7 +661,7 @@ Table of Contents
    distinct between manufacturers).
 
    UEIDs are not designed for direct use by humans (e.g., printing on
-   the case of a device), so no textual representation is defined.
+   the case of a device), so no such representation is defined.
 
    There are privacy considerations for UEIDs.  See Section 8.1.
 
@@ -700,45 +702,47 @@ Table of Contents
    product or use one type for some items of a given produce and another
    type for other.
 
-   +======+======+=====================================================+
-   | Type | Type | Specification                                       |
-   | Byte | Name |                                                     |
-   +======+======+=====================================================+
-   | 0x01 | RAND | This is a 128, 192 or 256-bit random number         |
-   |      |      | generated once and stored in the entity.  This may  |
-   |      |      | be constructed by concatenating enough identifiers  |
-   |      |      | to make up an equivalent number of random bits and  |
-   |      |      | then feeding the concatenation through a            |
-   |      |      | cryptographic hash function.  It may also be a      |
-   |      |      | cryptographic quality random number generated once  |
-   |      |      | at the beginning of the life of the entity and      |
-   |      |      | stored.  It MUST NOT be smaller than 128 bits.      |
-   |      |      | See the length analysis in Appendix B.              |
-   +------+------+-----------------------------------------------------+
-   | 0x02 | IEEE | This uses the IEEE company identification           |
-   |      | EUI  | registry.  An EUI is either an EUI-48, EUI-60 or    |
-   |      |      | EUI-64 and made up of an OUI, OUI-36 or a CID,      |
-   |      |      | different registered company identifiers, and some  |
-   |      |      | unique per-entity identifier.  EUIs are often the   |
-   |      |      | same as or similar to MAC addresses.  This type     |
-   |      |      | includes MAC-48, an obsolete name for EUI-48.       |
-   |      |      | (Note that while entities with multiple network     |
-   |      |      | interfaces may have multiple MAC addresses, there   |
-   |      |      | is only one UEID for an entity) [IEEE.802-2001],    |
-   |      |      | [OUI.Guide].                                        |
-   +------+------+-----------------------------------------------------+
-   | 0x03 | IMEI | This is a 14-digit identifier consisting of an      |
-   |      |      | 8-digit Type Allocation Code and a 6-digit serial   |
-   |      |      | number allocated by the manufacturer, which SHALL   |
-   |      |      | be encoded as byte string of length 14 with each    |
-   |      |      | byte as the digit's value (not the ASCII encoding   |
-   |      |      | of the digit; the digit 3 encodes as 0x03, not      |
-   |      |      | 0x33).  The IMEI value encoded SHALL NOT include    |
-   |      |      | Luhn checksum or SVN information.  See              |
-   |      |      | [ThreeGPP.IMEI].                                    |
-   +------+------+-----------------------------------------------------+
+   +======+======+====================================================+
+   | Type | Type | Specification                                      |
+   | Byte | Name |                                                    |
+   +======+======+====================================================+
+   | 0x01 | RAND | This is a 128, 192 or 256-bit random number        |
+   |      |      | generated once and stored in the entity.  This may |
+   |      |      | be constructed by concatenating enough identifiers |
+   |      |      | to make up an equivalent number of random bits and |
+   |      |      | then feeding the concatenation through a           |
+   |      |      | cryptographic hash function.  It may also be a     |
+   |      |      | cryptographic quality random number generated once |
+   |      |      | at the beginning of the life of the entity and     |
+   |      |      | stored.  It MUST NOT be smaller than 128 bits.     |
+   |      |      | See the length analysis in Appendix B.             |
+   +------+------+----------------------------------------------------+
+   | 0x02 | IEEE | This makes use of the device identification scheme |
+   |      | EUI  | operated by the IEEE.  An EUI is either an EUI-48, |
+   |      |      | EUI-60 or EUI-64 and made up of an OUI, OUI-36 or  |
+   |      |      | a CID, different registered company identifiers,   |
+   |      |      | and some unique per-entity identifier.  EUIs are   |
+   |      |      | often the same as or similar to MAC addresses.     |
+   |      |      | This type includes MAC-48, an obsolete name for    |
+   |      |      | EUI-48.  (Note that while entities with multiple   |
+   |      |      | network interfaces may have multiple MAC           |
+   |      |      | addresses, there is only one UEID for an entity)   |
+   |      |      | [IEEE.802-2001], [OUI.Guide].                      |
+   +------+------+----------------------------------------------------+
+   | 0x03 | IMEI | This makes use of the International Mobile         |
+   |      |      | Equipment Identity (IMEI) scheme operated by the   |
+   |      |      | GSMA.  This is a 14-digit identifier consisting of |
+   |      |      | an 8-digit Type Allocation Code (TAC) and a        |
+   |      |      | 6-digit serial number allocated by the             |
+   |      |      | manufacturer, which SHALL be encoded as byte       |
+   |      |      | string of length 14 with each byte as the digit's  |
+   |      |      | value (not the ASCII encoding of the digit; the    |
+   |      |      | digit 3 encodes as 0x03, not 0x33).  The IMEI      |
+   |      |      | value encoded SHALL NOT include Luhn checksum or   |
+   |      |      | SVN information.  See [ThreeGPP.IMEI].             |
+   +------+------+----------------------------------------------------+
 
-                      Table 1: UEID Composition Types
+                     Table 1: UEID Composition Types
 
 4.2.1.2.  Rules for Consuming UEIDs
 
@@ -814,12 +818,24 @@ Table of Contents
    used at the convenience of the claim sender.  The receiver of this
    claim MUST be able to handle all three forms.
 
-4.2.3.1.  Random Number Based OEMID
+   Note that the "hwmodel" claim in Section 4.2.4, the "oemboot" claim
+   in Section 4.2.8 and "dbgstat" claim in Section 4.2.9 depend on this
+   claim.
 
-   The random number based OEMID MUST always be 16 bytes (128 bits)
+   Sometimes one manufacturer will acquire or merge with another.
+   Depending on the situation and use case newly manfactured devices may
+   continue to use the old OEM ID or switch to a new one.  This is left
+   to the discretion of the manufacturers, but they should consider how
+   it affects the above-mentioned claims and the attestation eco-system
+   for their devices.  The considerations are the same for all three
+   forms of this claim.
+
+4.2.3.1.  Random Number Based OEM ID
+
+   The random number based OEM ID MUST always be 16 bytes (128 bits)
    long.
 
-   The OEM MAY create their own ID by using a cryptographic-quality
+   The OEM may create their own ID by using a cryptographic-quality
    random number generator.  They would perform this only once in the
    life of the company to generate the single ID for said company.  They
    would use that same ID in every entity they make.  This uniquely
@@ -828,7 +844,7 @@ Table of Contents
 
    In JSON-encoded tokens this MUST be base64url-encoded.
 
-4.2.3.2.  IEEE Based OEMID
+4.2.3.2.  IEEE Based OEM ID
 
    The IEEE operates a global registry for MAC addresses and company
    IDs.  This claim uses that database to identify OEMs.  The contents
@@ -857,7 +873,7 @@ Table of Contents
    In JSON-encoded tokens, this MUST be base64url-encoded and always 4
    bytes.
 
-4.2.3.3.  IANA Private Enterprise Number Based OEMID
+4.2.3.3.  IANA Private Enterprise Number Based OEM ID
 
    IANA maintains a registry for Private Enterprise Numbers (PEN) [PEN].
    A PEN is an integer that identifies an enterprise and may be used to
@@ -955,11 +971,13 @@ Table of Contents
 
 4.2.7.  swversion (Software Version) Claim
 
-   The "swversion" claim makes use of the CoSWID version-scheme item to
-   give a simple version for the software.  A full CoSWID manifest or
-   other type of manifest can be instead if this is too simple.  A
-   "swversion" claim MUST only be present if a "swname" claim described
-   in Section 4.2.6 is present.
+   The "swversion" claim makes use of the CoSWID version-scheme defined
+   in [CoSWID] to give a simple version for the software.  A "swversion"
+   claim MUST only be present if a "swname" claim described in
+   Section 4.2.6 is present.
+
+   The "manifests" claim Section 4.2.15 may be instead if this is too
+   simple.
 
    $$Claims-Set-Claims //= (sw-version-label => sw-version-type)
 
@@ -977,8 +995,8 @@ Table of Contents
    of the OEM and may not be replaced by the end user or even the
    enterprise that owns the device.  The means of control may be by
    cryptographic authentication of the software, by the software being
-   in ROM, a combination of the two or other.  If this claim is present
-   the "oemid" claim SHOULD always also be present.
+   in Read-Only Memory (ROM), a combination of the two or other.  If
+   this claim is present the "oemid" claim MUST be present.
 
    $$Claims-Set-Claims //= (oem-boot-label => bool)
 
@@ -1056,7 +1074,8 @@ Table of Contents
    disabled such that no end user or developer can enable them.  Only
    the manufacturer indicated in the "oemid" claim can enable them.
    This also indicates that all debug facilities are currently disabled
-   and have been so since boot/start.
+   and have been so since boot/start.  If this debug state is reported,
+   the "oemid" claim MUST be present.
 
 4.2.9.5.  Disabled Fully and Permanently
 
@@ -1126,9 +1145,8 @@ Table of Contents
 
 4.2.11.  uptime (Uptime) Claim
 
-   The "uptime" claim MUST contain a value that represents the number of
-   seconds that have elapsed since the entity or submodule was last
-   booted.
+   The "uptime" claim contains the number of seconds that have elapsed
+   since the entity or submodule was last booted.
 
    $$Claims-Set-Claims //= (uptime-label => uint)
 
@@ -1172,15 +1190,16 @@ Table of Contents
    received all of the certifications.
 
    DLOA documents are always fetched from a registrar that stores them.
-   This claim contains several data items used to construct a URL for
-   fetching the DLOA from the particular registrar.
+   This claim contains several data items used to construct a Uniform
+   Resource Locator (URL) for fetching the DLOA from the particular
+   registrar.
 
    This claim MUST be encoded as an array with either two or three
-   elements.  The first element MUST be the URI for the registrar.  The
+   elements.  The first element MUST be the URL for the registrar.  The
    second element MUST be a platform label indicating which platform was
    certified.  If the DLOA applies to an application, then the third
    element is added which MUST be an application label.  The method of
-   constructing the registrar URI, platform label and possibly
+   constructing the registrar URL, platform label and possibly
    application label is specified in [DLOA].
 
    The retriever of a DLOA MUST follow the recommendation in [DLOA] and
@@ -1205,10 +1224,10 @@ Table of Contents
    software is installed or are created as part of the installation
    process.  Installation is anything that adds software to the entity,
    possibly factory installation, the user installing elective
-   applications and so on.  The defining characteristic is they are
-   created by the software manufacturer.  The purpose of these claims in
-   an EAT is to relay them without modification to the verifier and
-   possibly to the relying party.
+   applications and so on.  The defining characteristic of a manifest is
+   that it is created by the software manufacturer.  The purpose of this
+   claim is to relay unmodified manifests to the verifier and possibly
+   to the relying party.
 
    Some manifests are signed by their software manufacturer
    independently, and some are not either because they do not support
@@ -1216,13 +1235,15 @@ Table of Contents
    CoSWID might be signed independently before it is included in an EAT.
    When signed manifests are put into an EAT, the manufacturer's
    signature SHOULD be included even though an EAT's signature will also
-   cover the manifest.
+   cover the manifest.  This allows the receiver to directly verify the
+   manufacturer-originated manifest.
 
-   This claim allows multiple formats for the manifest.  For example,
-   the manifest may be a CBOR-encoded CoSWID, an XML-encoded SWID or
-   other.  Identification of the type of manifest is always by a CoAP
-   Content-Format integer [RFC7252].  If there is no CoAP identifier
-   registered for the manifest format, one MUST be registered.
+   This claim allows multiple manifest formats.  For example, the
+   manifest may be a CBOR-encoded CoSWID, an XML-encoded SWID or other.
+   Identification of the type of manifest is always by a Constrained
+   Application Protocol (CoAP) Content-Format integer [RFC7252].  If
+   there is no CoAP identifier registered for a manifest format, one
+   MUST be registered.
 
    This claim MUST be an array of one or more manifests.  Each manifest
    in the claim MUST be an array of two.  The first item in the array of
@@ -1243,7 +1264,8 @@ Table of Contents
    A CoSWID manifest MUST be a payload CoSWID, not an evidence CoSWID.
    These are defined in [CoSWID].
 
-   A [SUIT.Manifest] may be used as a manifest.
+   A Software Updates for Internet of Things (SUIT) Manifest
+   [SUIT.Manifest] may be used.
 
    This claim is extensible for use of manifest formats beyond those
    mentioned in this document.  No particular manifest format is
@@ -1619,10 +1641,10 @@ Table of Contents
    There are individual timestamps associated with these claims to
    indicate their age is older than the "iat" timestamp.
 
-   CWT allows the use floating-point for this claim.  EAT disallows the
-   use of floating-point.  An EAT token MUST NOT contain an "iat" claim
-   in floating-point format.  Any recipient of a token with a floating-
-   point format "iat" claim MUST consider it an error.
+   CWT allows the use of floating-point for this claim.  EAT disallows
+   the use of floating-point.  An EAT token MUST NOT contain an "iat"
+   claim in floating-point format.  Any recipient of a token with a
+   floating-point format "iat" claim MUST consider it an error.
 
    A 64-bit integer representation of the CBOR epoch-based time
    [RFC8949] used by this claim can represent a range of +/- 500 billion
@@ -1633,13 +1655,13 @@ Table of Contents
 
    See Section 6 for the detailed description of an EAT profile.
 
-   The "eat_profile" claim identifies an EAT profile by either a URL or
-   an OID.  Typically, the URI will reference a document describing the
-   profile.  An OID is just a unique identifier for the profile.  It may
-   exist anywhere in the OID tree.  There is no requirement that the
-   named document be publicly accessible.  The primary purpose of the
-   "eat_profile" claim is to uniquely identify the profile even if it is
-   a private profile.
+   The "eat_profile" claim identifies an EAT profile by either a Uniform
+   Resource Identifier (URI) or an Object Identifier (OID).  Typically,
+   the URI will reference a document describing the profile.  An OID is
+   just a unique identifier for the profile.  It may exist anywhere in
+   the OID tree.  There is no requirement that the named document be
+   publicly accessible.  The primary purpose of the "eat_profile" claim
+   is to uniquely identify the profile even if it is a private profile.
 
    The OID is always absolute and never relative.
 
@@ -1985,9 +2007,9 @@ Table of Contents
    Security considerations, see Section 9.3, require a mechanism to
    provide freshness.  This may be the EAT nonce claim in Section 4.1,
    or some claim or mechanism defined outside this document.  The
-   section on freshness in [RATS.Architecture] describes several
-   options.  A profile should specify which freshness mechanism or
-   mechanisms can be used.
+   section on freshness in [RFC9334] describes several options.  A
+   profile should specify which freshness mechanism or mechanisms can be
+   used.
 
    If the EAT nonce claim is used, a profile should specify whether
    multiple nonces may be sent.  If a profile allows multiple nonces to
@@ -2015,11 +2037,11 @@ Table of Contents
    Some claims are "pluggable" in that they allow different formats for
    their content.  The "manifests" claim (Section 4.2.15) along with the
    measurement and "measurements" (Section 4.2.16) claims are examples
-   of this, allowing the use of CoSWID, TEEP Manifests and other
-   formats.  A profile should specify which formats are allowed to be
-   sent, with the assumption that the corresponding COAP content types
-   have been registered.  A profile should require the receiver to
-   accept all formats that are allowed to be sent.
+   of this, allowing the use of CoSWID, SUIT Manifest and other formats.
+   A profile should specify which formats are allowed to be sent, with
+   the assumption that the corresponding CoAP content types have been
+   registered.  A profile should require the receiver to accept all
+   formats that are allowed to be sent.
 
    Further, if there is variation within a format that is allowed, the
    profile should specify which variations can be sent.  For example,
@@ -2071,7 +2093,7 @@ Table of Contents
        | Endorsements   | This profile contains no endorsement    |
        |                | identifier                              |
        +----------------+-----------------------------------------+
-       | Nonce          | A new single unique nonce MUST be used  |
+       | Freshness      | A new single unique nonce MUST be used  |
        |                | for every token request                 |
        +----------------+-----------------------------------------+
        | Claims         | No requirement is made on the presence  |
@@ -2521,11 +2543,10 @@ Table of Contents
 
 8.  Privacy Considerations
 
-   Certain EAT claims can be used to track the owner of an entity and
-   therefore, implementations should consider providing privacy-
-   preserving options dependent on the intended usage of the EAT.
-   Examples would include suppression of location claims for EAT's
-   provided to unauthenticated consumers.
+   Certain EAT claims can be used to track the owner of an entity;
+   therefore, implementations should consider privacy-preserving options
+   dependent on the usage of the EAT.  For example, the location claim
+   might be suppressed in EATs sent to unauthenticated consumers.
 
 8.1.  UEID and SUEID Privacy Considerations
 
@@ -2604,9 +2625,9 @@ Table of Contents
 
    The security considerations provided in Section 8 of [RFC8392] and
    Section 11 of [RFC7519] apply to EAT in its CWT and JWT form,
-   respectively.  Moreover, Chapter 12 of [RATS.Architecture] is also
-   applicable to implementations of EAT.  In addition, implementors
-   should consider the following.
+   respectively.  Moreover, Chapter 12 of [RFC9334] is also applicable
+   to implementations of EAT.  In addition, implementors should consider
+   the following.
 
 9.1.  Claim Trustworthiness
 
@@ -2663,10 +2684,9 @@ Table of Contents
 9.3.  Freshness
 
    All EAT use MUST provide a freshness mechanism to prevent replay and
-   related attacks.  The extensive discussions on freshness in
-   [RATS.Architecture] including security considerations apply here.
-   The EAT nonce claim, in Section 4.1, is one option to provide
-   freshness.
+   related attacks.  The extensive discussions on freshness in [RFC9334]
+   including security considerations apply here.  The EAT nonce claim,
+   in Section 4.1, is one option to provide freshness.
 
 9.4.  Multiple EAT Consumers
 
@@ -2700,15 +2720,15 @@ Table of Contents
 
 9.5.  Detached EAT Bundle Digest Security Considerations
 
-   A detached EAT bundle is composed of a nested EAT and an unsigned
-   claims set as per Section 5 .  Although the attached claims set is
-   vulnerable to modification in transit, any modification can be
-   detected by the receiver through the associated digest, which is a
-   claim fully contained within an EAT.  Moreover, the digest itself can
-   only be derived using an appropriate COSE hash algorithm, implying
-   that an attacker cannot induce false detection of a modified detached
-   claims because the algorithms in the COSE registry are assumed to be
-   of sufficient cryptographic strength.
+   A detached EAT bundle is composed of a nested EAT and an claims set
+   as per Section 5.  Although the attached claims set is vulnerable to
+   modification in transit, any modification can be detected by the
+   receiver through the associated digest, which is a claim fully
+   contained within an EAT.  Moreover, the digest itself can only be
+   derived using an appropriate COSE hash algorithm, implying that an
+   attacker cannot induce false detection of modified detached claims
+   because the algorithms in the COSE registry are assumed to be of
+   sufficient cryptographic strength.
 
 9.6.  Verification Keys
 
@@ -2815,7 +2835,7 @@ Table of Contents
    *  Specification Document(s): *this document*
 
 
-   *  Claim Name: Hardware OEMID
+   *  Claim Name: Hardware OEM ID
 
    *  Claim Description: Hardware OEM ID
 
@@ -3106,6 +3126,12 @@ Table of Contents
 
                        Table 3: UEID URN Registration
 
+   ABNF for these two URNs is as follows where b64ueid is the base64url-
+   encoded binary byte-string for the UEID or SUEID:
+
+   body =/ ueidbody
+   ueidbody = %s”ueid:” b64ueid
+
 10.4.  CBOR Tag for Detached EAT Bundle Registered by this Document
 
    In the registry [IANA.cbor-tags], IANA is requested to allocate the
@@ -3229,6 +3255,11 @@ Table of Contents
               DOI 10.17487/RFC9165, December 2021,
               <https://www.rfc-editor.org/rfc/rfc9165>.
 
+   [RFC9334]  Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
+              W. Pan, "Remote ATtestation procedureS (RATS)
+              Architecture", RFC 9334, DOI 10.17487/RFC9334, January
+              2023, <https://www.rfc-editor.org/rfc/rfc9334>.
+
    [SUIT.Manifest]
               Moran, B., Tschofenig, H., Birkholz, H., Zandberg, K., and
               O. Rønningstad, "A Concise Binary Object Representation
@@ -3310,14 +3341,6 @@ Table of Contents
               "IEEE Registration Authority Assignments",
               <https://regauth.standards.ieee.org/standards-ra-web/pub/
               view.html#registries>.
-
-   [RATS.Architecture]
-              Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
-              W. Pan, "Remote ATtestation procedureS (RATS)
-              Architecture", Work in Progress, Internet-Draft, draft-
-              ietf-rats-architecture-22, 28 September 2022,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-rats-
-              architecture-22>.
 
    [RFC4122]  Leach, P., Mealling, M., and R. Salz, "A Universally
               Unique IDentifier (UUID) URN Namespace", RFC 4122,
@@ -3501,8 +3524,9 @@ A.1.4.  Key / Key Store Attestation
    / This is an attestation of a public key and the key store     /
    / implementation that protects and manages it. The key store   /
    / implementation is in a security-oriented execution           /
-   / environment separate from the high-level OS, for example a   /
-   / TEE. The key store is the Attester.                          /
+   / environment separate from the high-level OS (HLOS), for      /
+   / example a Trusted Execution Environment (TEE). The key store /
+   / is the Attester.                                             /
    /                                                              /
    / There is some attestation of the high-level OS, just version /
    / and boot & debug status. It is a Claims-Set submodule because/
@@ -3762,7 +3786,7 @@ A.2.  Signed Token Examples
 
 A.2.1.  Basic CWT Example
 
-   This is a simple ECDSA signed CWT-format token.
+   This is a simple CWT-format token signed with the ECDSA algorithm.
 
    / This is a full CWT-format token with a very simple payloal. /
    / The main structure visible here is that of the COSE_Sign1.  /
@@ -3892,8 +3916,8 @@ Appendix B.  UEID Design Rationale
 B.1.  Collision Probability
 
    This calculation is to determine the probability of a collision of
-   UEIDs given the total possible entity population and the number of
-   entities in a particular entity management database.
+   type 0x01 UEIDs given the total possible entity population and the
+   number of entities in a particular entity management database.
 
    Three different sized databases are considered.  The number of
    devices per person roughly models non-personal devices such as
@@ -4007,7 +4031,7 @@ B.1.  Collision Probability
                    Table 7: UEID Collision Probability
 
    Clearly, 128 bits is enough for the near future thus the requirement
-   that UEIDs be a minimum of 128 bits.
+   that type 0x01 UEIDs be a minimum of 128 bits.
 
    There is no requirement for 256 bits today as quadrillion-record
    databases are not expected in the near future and because this time-
@@ -4017,8 +4041,8 @@ B.1.  Collision Probability
 
 B.2.  No Use of UUID
 
-   A UEID is not a UUID [RFC4122] by conscious choice for the following
-   reasons.
+   A UEID is not a Universally Unique Identifier (UUID) [RFC4122] by
+   conscious choice for the following reasons.
 
    UUIDs are limited to 128 bits which may not be enough for some future
    use cases.
@@ -4332,12 +4356,12 @@ Appendix F.  Endorsements and Verification Keys
    something complicated in the case of a scheme like Direct Anonymous
    Attestation (DAA).
 
-   RATS Architecture [RATS.Architecture] describes what is called an
-   endorsement.  This is an input to the verifier that is usually the
-   basis of the trust placed in an EAT and the attester that generated
-   it.  It may contain the public key for verification of the signature
-   on the EAT.  It may contain implied claims, those that are passed on
-   to the relying party in attestation results.
+   RATS Architecture [RFC9334] describes what is called an endorsement.
+   This is an input to the verifier that is usually the basis of the
+   trust placed in an EAT and the attester that generated it.  It may
+   contain the public key for verification of the signature on the EAT.
+   It may contain implied claims, those that are passed on to the
+   relying party in attestation results.
 
    There is not yet any standard format(s) for an endorsement.  One
    format that may be used for an endorsement is an X.509 certificate.
@@ -4376,9 +4400,9 @@ F.1.1.  COSE/JWS Key ID
 
    COSE leaves the semantics of the key ID open-ended.  It could be a
    record locator in a database, a hash of a public key, an input to a
-   KDF, an authority key identifier (AKI) for an X.509 certificate or
-   other.  The profile document should specify what the key ID's
-   semantics are.
+   Key Derivation Function (KDF), an Authority Key Identifier (AKI) for
+   an X.509 certificate or other.  The profile document should specify
+   what the key ID's semantics are.
 
 F.1.2.  JWS and COSE X.509 Header Parameters
 
@@ -4430,6 +4454,8 @@ G.1.  From draft-ietf-rats-eat-21
 
    *  Add titles to tables
 
+   *  Add ABNF to define format of device ID URN
+
    *  Fix some nits
 
    *  Clarification in 6.1.12 that "receiver accepts token with claims
@@ -4442,6 +4468,23 @@ G.1.  From draft-ietf-rats-eat-21
    *  Change "Indicate" to "Indcates"
 
    *  Define "partial" and "full" profiles
+
+   *  Better into wording for type 2 and 3 UEIDs
+
+   *  Wording improvements for manifests claim
+
+   *  Wording improvements for detached EAT bundle
+
+   *  Clarify purpose of including manufacturer manifest signatures
+
+   *  Refer to RFC 9334 instead of RATS.Arch and make ref normative
+
+   *  Require "oemid" claim for "oemboot" claim and debug state of
+      permanently disabled.
+
+   *  Clarify what happens to OEM ID when companies merge
+
+   *  "OEMID" -> "OEM ID"
 
 Contributors
 
