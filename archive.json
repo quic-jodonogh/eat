@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-09-20T19:40:47.012281+00:00",
+  "timestamp": "2023-09-21T20:34:07.287999+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -21483,7 +21483,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-09-04T18:24:25Z",
-      "updatedAt": "2023-09-20T19:40:31Z",
+      "updatedAt": "2023-09-21T19:58:10Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "caa9fb8378885f4baa6308c9e20741fbd17ab2f7",
@@ -21515,6 +21515,13 @@
           "body": "> Lack of a specific alg. identifier does not imply that interoperability is not possible. For instance, https://datatracker.ietf.org/doc/html/rfc8152#appendix-A.1 discusses the use of implicit algorithms. In my interpretation of the PQC example, if the alg. field is left empty but the kid points to a PQC keypair then interoperability is still possible without having to re-define the profile to explicitly include the PQC algm.\r\n\r\nYes, this is true and with the it's OK to to not have an alg ID in a full profile.",
           "createdAt": "2023-09-17T21:54:53Z",
           "updatedAt": "2023-09-17T21:54:53Z"
+        },
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Please take a look at my recent update here. It tightens up a lot and I think makes the notion of a full profile much more clear. Also this hopefully addresses Simon's comment too.",
+          "createdAt": "2023-09-20T19:42:34Z",
+          "updatedAt": "2023-09-20T19:42:34Z"
         }
       ],
       "reviews": [
@@ -21615,6 +21622,46 @@
               "body": "FYI, we've reviewed the text in the PSA (partial!) profile and will be making changes to clarify the baseline vs implementation specifics. PRs in preparation. \r\nPerhaps this (L1304) statement instead could say something like:\r\nPartial profiles are allowed, but MUST make clear that they are only used as a source to derive deployment specific profiles.",
               "createdAt": "2023-09-13T10:26:59Z",
               "updatedAt": "2023-09-13T10:27:07Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOCEWCXc5hiY0Y",
+          "commit": {
+            "abbreviatedOid": "3a67218"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-09-20T20:03:37Z",
+          "updatedAt": "2023-09-20T20:03:37Z",
+          "comments": [
+            {
+              "originalPosition": 24,
+              "body": "_OOP is back on track!_ \ud83d\ude04 \r\n\r\nJust a clarification: from this example I understand that \"deriving\" allows overriding what is inherited?\r\n\r\nAn alternative would be to define a partial profile as an abstract class with a \"pure virtual\" signing algorithm that full profiles must instantiate.",
+              "createdAt": "2023-09-20T20:03:37Z",
+              "updatedAt": "2023-09-20T20:03:37Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOCEWCXc5hqyRk",
+          "commit": {
+            "abbreviatedOid": "3a67218"
+          },
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-09-21T19:58:10Z",
+          "updatedAt": "2023-09-21T19:58:10Z",
+          "comments": [
+            {
+              "originalPosition": 24,
+              "body": "Hi Thomas,\r\n\r\nThis paragraph is just an example, not normative so you can do what you want.\r\n\r\nSo, yes, a derived profile can override another or you can do an abstract class profile.\r\n\r\nPersonally, I have a preference to avoid partial profiles because I prefer to go directly from the abstraction that EAT is to a fully specified protocol in one step because I think it is less confusing for the implementors, but no objection for folks that want them.",
+              "createdAt": "2023-09-21T19:58:10Z",
+              "updatedAt": "2023-09-21T19:58:11Z"
             }
           ]
         }
@@ -22229,7 +22276,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-09-12T17:18:45Z",
-      "updatedAt": "2023-09-18T18:04:36Z",
+      "updatedAt": "2023-09-20T19:47:05Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d9f7af71d58adde495b972bd233eda3e203784df",
@@ -22240,7 +22287,15 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I have this text and also text in the full/partial profile PR. I like having both because I think it gives more clarity on something that is confusing. Will keep them both unless there is strong objection.\r\n\r\nThanks as always for the reviews.",
+          "createdAt": "2023-09-20T19:47:05Z",
+          "updatedAt": "2023-09-20T19:47:05Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOCEWCXc5guq7L",
