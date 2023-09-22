@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-09-21T20:34:07.287999+00:00",
+  "timestamp": "2023-09-22T19:27:27.215656+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -22392,6 +22392,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 421,
+      "id": "PR_kwDOCEWCXc5a7dIX",
+      "title": "Improve JSON nonce min and max size",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/421",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "A private comment from Thomas (thx) caused me to think through the size of nonces for JSON-encoded tokens again. The new text is more obvious and gives more flexibility.\r\n\r\nThe main point of restricting a size range of the nonce is to help developers. The max size makes it clear what size buffer they need to allocate.  The min size makes sure they are at least trying to get enough entropy.",
+      "createdAt": "2023-09-21T20:35:10Z",
+      "updatedAt": "2023-09-22T19:25:47Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "caa9fb8378885f4baa6308c9e20741fbd17ab2f7",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "nonce-size",
+      "headRefOid": "28bd1a7c094df50217c696ccad0d2ed80423b9ad",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
