@@ -5,11 +5,11 @@
 RATS                                                        L. Lundblade
 Internet-Draft                                       Security Theory LLC
 Intended status: Standards Track                              G. Mandyam
-Expires: 24 March 2024                                     J. O'Donoghue
+Expires: 25 March 2024                                     J. O'Donoghue
                                               Qualcomm Technologies Inc.
                                                               C. Wallace
                                                 Red Hound Software, Inc.
-                                                       21 September 2023
+                                                       22 September 2023
 
 
                    The Entity Attestation Token (EAT)
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 March 2024.
+   This Internet-Draft will expire on 25 March 2024.
 
 Copyright Notice
 
@@ -625,7 +625,7 @@ Table of Contents
    In JSON, an EAT nonce is a text string.  The maximum size is 88 bytes
    which is the size of a base 64 encoding of 64 bytes with padding.
    The minimum size is 8 bytes to allow use of any/every UTF-8 byte
-   pattern for the most compact representation of 8 random bytes.
+   pattern for the most compact representation of 64 random bits.
 
    $$Claims-Set-Claims //=
        (nonce-label => nonce-type / [ 2* nonce-type ])
