@@ -3879,6 +3879,7 @@ differences. A comprehensive history is available via the IETF Datatracker's rec
           <li>IETF is change controller rather than IESG for IANA registrations</li>
           <li>Change "Indicate" to "Indcates"</li>
           <li>Better into wording for type 2 and 3 UEIDs</li>
+          <li>Correct the JSON detached eat bundle example</li>
           <li>Wording improvements for manifests claim</li>
           <li>Wording improvements for detached EAT bundle</li>
           <li>Clarify purpose of including manufacturer manifest signatures</li>
@@ -5030,11 +5031,12 @@ RBRnlyl4R2qCMB6n1UiElcRcCAtCBZhOFfrsxYWNpyKLrWwS3PzpwlG+BYI0
 GQStpOp7TtXtDocMIsOZrQSNJB93d48PLKOm6EI6KBi1hvOTY3j4IPnMJxjU
 a3wZTrztSZ66Yc2reT5T5Jbgm8wpl3e2yEoqAyVW4uxyipSD6tEWjgtolmPl
 Yca0vWz8JYiaKi8Oamscx00J0CmeFBdmrSHxDvdPn9NqUQUjCSAQ/I2qkKe7
-dTgdElfewjXAv4hF4yB2tdkp1eOgxWdUAjyuAcO2wMMXqwNlpRFYeTKi4lg0
-6/seLSnOpJcZ0/jYf0++ccz4wjYKZkLuypgIcGQnqErg5PBwoX1EZxtDS2hG
-qaEZRXMfVD1MOBG9zwZqKSEqjBrHq6uRymdFP5kVxY15faq4Q82a1C07xjid
-CcYo+Y0c8YKSb4p8fBLPL3EoW/D14d6WW/2BfoUntxynWq0yBST9JZwn8ZIh
-BVzrNG7DJ6wnGdUaT4wrhSW0O8tRZ+uZ878BGPUwY5JxAgA=
+dTgdElfewjXAv4hF4yB2tdkp1eOgxWdUAjyuAcO2YHNiCqLwBdQHNMA77IEC
+fheuBY9frM6LdUzg/MmIamnRIt33aEktJ70rmPXH7n5ypWOCGLZRsCpyV8ai
+gBM5Qc0D1wLPIppTdHIytIRWlxpaXTSzQk3FRB/R+2zPloqjwtdxvLp4qXxW
+dKtZQd+YBqhqQdSsSd2yH42zn2CMkg7JATIoKKfI9ifx/BKHsgVfH+5tudUf
+6Fd4cstxqtUqE0zSX8LxE6caEsy1zvo2bMV6kkGw8YC5UodCe78cdRSfOf8b
+d/mircFxAgA=
 
 -->
 

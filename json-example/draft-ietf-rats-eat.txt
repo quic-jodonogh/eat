@@ -4440,6 +4440,8 @@ G.1.  From draft-ietf-rats-eat-21
 
    *  Better into wording for type 2 and 3 UEIDs
 
+   *  Correct the JSON detached eat bundle example
+
    *  Wording improvements for manifests claim
 
    *  Wording improvements for detached EAT bundle
