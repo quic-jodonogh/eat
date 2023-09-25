@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-09-24T21:12:07.765727+00:00",
+  "timestamp": "2023-09-25T17:43:50.028286+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -22431,7 +22431,7 @@
       "labels": [],
       "body": "The JSON DEB example is now a correct JWT with correct content that can be validated.\r\n\r\nAlso checked in the JSON files used to construct the example.\r\n\r\nThere was a \"TODO\" tag for this that no noticed. Searching for \"TODO\" now has no results.",
       "createdAt": "2023-09-24T21:10:05Z",
-      "updatedAt": "2023-09-24T21:11:38Z",
+      "updatedAt": "2023-09-25T07:51:10Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "caa9fb8378885f4baa6308c9e20741fbd17ab2f7",
@@ -22443,7 +22443,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOCEWCXc5h19bt",
+          "commit": {
+            "abbreviatedOid": "d62e710"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "\ud83d\udc4d ",
+          "createdAt": "2023-09-25T07:51:10Z",
+          "updatedAt": "2023-09-25T07:51:10Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
