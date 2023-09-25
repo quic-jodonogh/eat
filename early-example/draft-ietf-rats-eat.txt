@@ -268,7 +268,7 @@ Table of Contents
 
    {
        "eat_nonce": "MIDBNH28iioisjPy",
-       "ueid":      "xoXC8AGPJxM",
+       "ueid":      "AgAEizrK3Q",
        "oemid":     76543,
        "swname":    "Acme IoT OS",
        "swversion": "3.1.4"
@@ -688,7 +688,7 @@ Table of Contents
 
    $$Claims-Set-Claims //= (ueid-label => ueid-type)
 
-   ueid-type = JC<base64-url-text .size (12..44) , bstr .size (7..33)>
+   ueid-type = JC<base64-url-text .size (10..44) , bstr .size (7..33)>
 
 4.2.1.1.  Rules for Creating UEIDs
 
@@ -2243,7 +2243,7 @@ Table of Contents
 
    $$Claims-Set-Claims //= (ueid-label => ueid-type)
 
-   ueid-type = JC<base64-url-text .size (12..44) , bstr .size (7..33)>
+   ueid-type = JC<base64-url-text .size (10..44) , bstr .size (7..33)>
 
    $$Claims-Set-Claims //= (sueids-label => sueids-type)
 

@@ -1645,7 +1645,7 @@ Only the Claims-Set, the payload for the JWT, is shown.<a href="#section-1-10" c
 <pre>
 {
     "eat_nonce": "MIDBNH28iioisjPy",
-    "ueid":      "xoXC8AGPJxM",
+    "ueid":      "AgAEizrK3Q",
     "oemid":     76543,
     "swname":    "Acme IoT OS",
     "swversion": "3.1.4"
@@ -1999,7 +1999,7 @@ the case of a device), so no such representation is defined.<a href="#section-4.
 <pre class="lang-CDDL sourcecode">
 $$Claims-Set-Claims //= (ueid-label =&gt; ueid-type)
 
-ueid-type = JC&lt;base64-url-text .size (12..44) , bstr .size (7..33)&gt;
+ueid-type = JC&lt;base64-url-text .size (10..44) , bstr .size (7..33)&gt;
 </pre><a href="#section-4.2.1-6" class="pilcrow">¶</a>
 </div>
 <div id="rules-for-creating-ueids">
@@ -3484,7 +3484,7 @@ nonce-type = JC&lt; tstr .size (10..74), bstr .size (8..64)&gt;
 
 $$Claims-Set-Claims //= (ueid-label =&gt; ueid-type)
 
-ueid-type = JC&lt;base64-url-text .size (12..44) , bstr .size (7..33)&gt;
+ueid-type = JC&lt;base64-url-text .size (10..44) , bstr .size (7..33)&gt;
 
 $$Claims-Set-Claims //= (sueids-label =&gt; sueids-type)
 
